@@ -66,6 +66,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
+
 `;
 
 const StyledLinkWrapper = styled.article`
