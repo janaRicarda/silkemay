@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import {Outfit} from "next/font/google";
-import { Playfair_Display } from "next/font/google";
-import { Electrolize } from "next/font/google";
+
 
 
 
@@ -15,26 +14,21 @@ export default createGlobalStyle`
   margin: 0;
 }
   :root {
-
-  --background: #FAF4EC;
- 
---font: #45525b;
- 
---light-font: var(--font);
-
-  --light-backgorudn: #FFAEA7;
+    --background: #d95555;
+    --light-font: #ffffff;
+    --light-background: #ffffff;
+    --dark-font: #5c5b5b;
 
 
 
 
 }
   body {
-  //padding-top: 81.6px;
-  //height: 100vh;
   background: var(--background);
   color: var(--font);
-  font-family: ${outfit.style.fontFamily};
+
   font-weight: 100;
+  font-family: system-ui;
  @media (min-width: 800px) {
  font-size: 1.1rem;
  }
