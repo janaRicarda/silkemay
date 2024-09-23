@@ -1,6 +1,5 @@
 import Head from "next/head";
-import MainNavigation from "@/Components.js/Navigation";
-import Footer from "@/Components.js/Footer";
+import styled from "styled-components";
 
 export default function Home() {
   return (
@@ -11,9 +10,33 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     
-           <MainNavigation />
-      <Footer />
+       <StyledContentSection>
+        <StyledParagraph>KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE / BILDENDE KÜNSTLERIN</StyledParagraph>
+        </StyledContentSection> 
+           
     </>
   );
 }
+
+const StyledContentSection = styled.section`
+display: none;
+@media (min-width: 800px) {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 1rem;
+width: 100%;
+height: 100vh;
+background: var(--background);
+}
+`;
+
+const StyledParagraph = styled.p`
+color: var(--light-font);
+text-align: right;
+text-align : ${({$mobile}) => ($mobile ? "right" : "left")};
+@media (min-width: 800px) {
+display : ${({$mobile}) => ($mobile ? "none" : "block")};
+}
+`;

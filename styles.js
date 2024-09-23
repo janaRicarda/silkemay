@@ -18,18 +18,14 @@ export default createGlobalStyle`
     --light-font: #ffffff;
     --light-background: #ffffff;
     --dark-font: #5c5b5b;
-
-
-
-
 }
   body {
-  background: var(--background);
-  color: var(--font);
-
+  background: var(--light-background);
+  color: var(--dark-font);
   font-weight: 100;
   font-family: system-ui;
  @media (min-width: 800px) {
+ margin-left: 400px;
  font-size: 1.1rem;
  }
   }

@@ -1,36 +1,60 @@
 import styled, {keyframes} from "styled-components";
 import Link from "next/link";
 import { useState } from "react";
+import Footer from "./Footer";
+import Painting from "./PaintingMenu";
+import Therapy from "./TherapyMenu";
 
 export default function MainNavigation() {
+const [showPainting, setShowPainting] = useState(false);
+const [showTherapy, setShowTherapy] = useState(false);
+
+function handleShowPainting() {
+    setShowPainting(!showPainting);
+    setShowTherapy(false);
+}
+
+function handleShowTherapy() {
+    setShowTherapy(!showTherapy);
+    setShowPainting(false);
+}
+
     return(
-        <StyledSection>
+        <>
+        <StyledNavSection>
             <StyledArticle>
-                <StyledLink href="/painting">
+                {showPainting && <Painting />}
+                <StyledLink href="/painting" onClick={handleShowPainting}>
                 MALEREI
                 </StyledLink>
             </StyledArticle>
             <StyledArticle>
                 <StyledH1>SILKE MAY</StyledH1>
+                <StyledParagraph $mobile >KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE / BILDENDE KÜNSTLERIN</StyledParagraph>
             </StyledArticle>
             <StyledArticle>
-                <StyledLink href="/">
+                <StyledLink href="/" onClick={handleShowTherapy}>
                 THERAPIE
                 </StyledLink>
+                {showTherapy && <Therapy />}
             </StyledArticle>
-        </StyledSection>
+            <Footer />
+        </StyledNavSection>
+     
+        </>
     );
 }
 
 
-const StyledSection = styled.section`
+const StyledNavSection = styled.section`
 width: 100%;
 height: 100vh;
+background: var(--background);
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
-padding-right: 1rem;
+padding: 1rem;
 @media (min-width: 800px) {
 width: 400px;
 position: fixed;
@@ -44,6 +68,15 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
+`;
+
+const StyledParagraph = styled.p`
+color: var(--light-font);
+text-align: right;
+text-align : ${({$mobile}) => ($mobile ? "right" : "left")};
+@media (min-width: 800px) {
+display : ${({$mobile}) => ($mobile ? "none" : "block")};
+}
 `;
 
 const StyledLink = styled(Link)`
@@ -83,3 +116,4 @@ opacity: 1;
 &:focus {
 opacuty: 1;}
 `;
+

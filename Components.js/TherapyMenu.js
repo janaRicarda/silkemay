@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export default function Painting() {
+export default function Therapy() {
 return(
     <StyledLinkWrapper>
     <StyledLink href="/">KUNSTTHERAPIE</StyledLink>
@@ -21,7 +21,7 @@ flex-direction: column;
 justify-content: center;
 align-items: flex-end;
 font-size: 1.5rem;
-//animation: ${slideUp} 2000ms linear;
+
 `;
 
 const StyledLink = styled(Link)`

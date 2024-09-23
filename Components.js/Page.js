@@ -3,14 +3,14 @@ import styled from "styled-components";
 export default function PageWrapper({children, title, quote, text1}) {
     return(
         <StyledSection>
-            <StyledHeader>{title.toUpperCase()}</StyledHeader>
+           {/*  <StyledHeader>{title.toUpperCase()}</StyledHeader>
             <StyledArticle>
                 {quote}
             </StyledArticle>
             <StyledArticle>
                 {text1}
             </StyledArticle>
-            {children}
+            {children} */}
         </StyledSection>
     );
 }

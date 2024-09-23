@@ -20,7 +20,6 @@ flex-direction: column;
 justify-content: center;
 align-items: flex-end;
 font-size: 1.5rem;
-//animation: ${slideUp} 2000ms linear;
 `;
 
 const StyledLink = styled(Link)`
