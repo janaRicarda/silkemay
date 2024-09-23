@@ -25,4 +25,8 @@ font-size: 1.5rem;
 const StyledLink = styled(Link)`
 text-decoration: none;
 color: var(--light-font);
+opacity: 0.5;
+&:hover {
+opacity: 1;
+}
 `;

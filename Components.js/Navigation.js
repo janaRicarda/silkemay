@@ -33,7 +33,7 @@ function handleShowTherapy() {
                 <StyledParagraph $mobile >KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE / BILDENDE KÜNSTLERIN</StyledParagraph>
             </StyledArticle>
             <StyledArticle>
-                <StyledLink href="/" onClick={handleShowTherapy}>
+                <StyledLink href="/therapy" onClick={handleShowTherapy}>
                 THERAPIE
                 </StyledLink>
                 {showTherapy && <Therapy />}
@@ -83,7 +83,7 @@ const StyledLink = styled(Link)`
 text-decoration: none;
 color: var(--light-font);
 font-size: 3rem;
-opacity: 0.4;
+opacity: 0.5;
 &:hover {
 opacity: 1;
 }
