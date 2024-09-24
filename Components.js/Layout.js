@@ -1,12 +1,17 @@
 import MainNavigation from "./Navigation";
-import Footer from "./Footer";
+import Header from "./MobileHeader";
+import { useRouter } from "next/router";
+
 
 export default function Layout({children}) {
+  const router = useRouter();
+  const indexPage = router.pathname === "/";
     return(
         <>
-        <MainNavigation />
+         <MainNavigation indexPage={indexPage}/>
+        {!indexPage && <Header />}
         {children}
-      {/*   <Footer /> */}
+ 
         </>
     )
 }

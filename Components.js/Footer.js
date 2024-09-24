@@ -20,9 +20,8 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
-//padding: 0 0.5rem 0.5rem 0.5rem;
-padding: 1.5rem;
-//z-index: 2;
+padding: 1rem;
+gap: 0.2rem;
 `;
 
 const StyledLink = styled(Link)`

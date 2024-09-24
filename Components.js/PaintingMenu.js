@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export default function Painting() {
+export default function Painting({handleMenu}) {
 return(
     <StyledLinkWrapper>
-        <StyledLink href="/">AKTUELLES</StyledLink>
-        <StyledLink href="/">ÖLMALEREI</StyledLink>
-        <StyledLink href="/">PAPIERMALEREI</StyledLink>
-        <StyledLink href="/">ZEICHNEN</StyledLink>
-        <StyledLink href="/">KALLIGRAPHIE</StyledLink>
+        <StyledLink href="/malerei/aktuelles" onClick={handleMenu}>AKTUELLES</StyledLink>
+        <StyledLink href="/malerei/oelmalerei" onClick={handleMenu}>ÖLMALEREI</StyledLink>
+        <StyledLink href="/malerei/papiermalerei" onClick={handleMenu}>PAPIERMALEREI</StyledLink>
+        <StyledLink href="/malerei/zeichnen" onClick={handleMenu}>ZEICHNEN</StyledLink>
+        <StyledLink href="/malerei/kalligraphie" onClick={handleMenu}>KALLIGRAPHIE</StyledLink>
     </StyledLinkWrapper>
 )
 }

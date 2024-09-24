@@ -9,13 +9,13 @@ export default function PageWrapper({children, title, quote, text1}) {
 }
 
 const StyledSection = styled.section`
-width: 100%;
+width: auto;
 height: 100vh;
-margin-left: 1rem;
+margin: 1rem;
 padding: 2rem;
 display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: flex-start;
+align-items: center;
 gap: 2rem;
 `;
