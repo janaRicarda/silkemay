@@ -26,6 +26,7 @@ export default createGlobalStyle`
   font-family: system-ui;
  @media (min-width: 800px) {
  margin-left: 400px;
+ //margin-left: 45vw;
  font-size: 1.1rem;
  }
   }

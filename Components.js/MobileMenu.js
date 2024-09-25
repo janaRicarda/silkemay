@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import {keyframes} from "styled-components";
 import Link from "next/link";
 import Painting from "./PaintingMenu";
 import Therapy from "./TherapyMenu";
 import Infos from "./InfosMenu";
 import { useState } from "react";
+import Close from "../public/close.svg";
 
 export default function MobileMenu({handleMenu}) {
     const [showPainting, setShowPainting] = useState(false);
@@ -38,14 +40,19 @@ function handleShowInfos() {
                 <StyledMenuButton onClick={handleShowTherapy}>
                 THERAPIE
                 </StyledMenuButton>
-                {showTherapy && <Therapy />}
+                {showTherapy && <Therapy handleMenu={handleMenu}/>}
                 <StyledMenuButton onClick={handleShowInfos}>INFOS</StyledMenuButton>
                 {showInfos && <Infos />}
             </StyledNav>
-            <StyledButton onClick={handleMenu}>MENU schließen</StyledButton>
+            <StyledButton onClick={handleMenu}><StyledClose /></StyledButton>
         </StyledSection>
     )
 }
+
+const slideIn = keyframes`
+from {left: -100vw}
+to {left: 0}
+`;
 
 const StyledSection = styled.section`
 width: 100%;
@@ -59,6 +66,7 @@ flex-direction: column;
 justify-content: center;
 align-items: flex-end;
 padding-right: 2rem;
+//animation: ${slideIn} 800ms linear;
 @media (orientation: landscape) {
 padding-right: 11rem;}
 @media (min-width: 800px) {
@@ -72,8 +80,6 @@ flex-direction: column;
 justify-content: center;
 align-items: flex-end;
 `;
-
-const StyledArticle = styled.article``;
 
 const StyledLink = styled(Link)`
 text-decoration: none;
@@ -95,5 +101,11 @@ color: var(--light-font);
 position: absolute;
 top: 0;
 right: 0;
-margin: 2rem;
+margin: 1rem 1rem 1rem 0;
+`;
+
+const StyledClose = styled(Close)`
+width: 3rem;
+height: 3rem;
+fill: var(--light-font);
 `;

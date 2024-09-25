@@ -31,25 +31,18 @@ function handleRemoveMenus() {
             <StyledNav>
             {showPainting && <Painting />}
             <StyledArticle> 
-               
                 <StyledLink href="/malerei" onClick={handleShowPainting}>
                 MALEREI
                 </StyledLink>
-           {/*  </StyledArticle>
-            <StyledArticle> */}
                 <StyledLink $main href="/" onClick={handleRemoveMenus}>SILKE MAY</StyledLink>
-           {/*  </StyledArticle>
-            <StyledArticle> */}
                 <StyledLink href="/therapie" onClick={handleShowTherapy}>
                 THERAPIE
-                 </StyledLink> 
-               
+                </StyledLink> 
             </StyledArticle> 
             {showTherapy && <Therapy />}
             </StyledNav>
             <Footer />
         </StyledNavSection>
-      
         </>
     );
 }
@@ -57,26 +50,29 @@ function handleRemoveMenus() {
 
 const StyledNavSection = styled.section`
 display: none;
+@media (min-width: 800px) {
 width: 100%;
 height: 100vh;
 background: var(--background);
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
-@media (min-width: 800px) {
 display: flex;
 width: 400px;
+//width: 45vw;
 position: fixed;
 top: 0;
-left: 0;
+left: 0; 
 }
 `;
 
 const StyledNav = styled.nav`
 padding: 1rem;
+//border: 1px solid yellow;
 `;
 
 const StyledArticle = styled.article`
+//border: 1px solid blue;
 display: flex;
 flex-direction: column;
 justify-content: center;

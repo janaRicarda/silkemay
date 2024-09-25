@@ -3,18 +3,14 @@ import styled from "styled-components";
 
 export default function paintingPage() {
     return(
-        <PageWrapper 
-        title="malerei" 
-        quote="Kunst ist Magie, befreit von der Lüge, Wahrheit zu sein"
-        text1="In der Malerei interessieren mich Strukturen, Überlagerungen, Widersprüchlichkeiten, Verdichtungen, Zusammenhänge und das Spiel zwischen transparenten und dichten Flächen."
-        >
+        <PageWrapper height={"100vh"} gap={"2rem"}>
           <StyledArticle> 
        <StyledParagraph $quote>"Kunst ist Magie, befreit von der Lüge, Wahrheit zu sein."</StyledParagraph>
        <StyledParagraph $accent>Theodor W. Adorno</StyledParagraph>
        </StyledArticle> 
        <StyledParagraph>In der Malerei interessieren mich Strukturen, Überlagerungen, Widersprüchlichkeiten, Verdichtungen, Zusammenhänge und das Spiel zwischen transparenten und dichten Flächen.</StyledParagraph>
        <StyledParagraph>
-        Eine Auswahl meiner Arbeiten finden Sie auf dieser Website
+        Eine Auswahl meiner Arbeiten finden Sie auf dieser Website.
        </StyledParagraph>
         </PageWrapper>
     );

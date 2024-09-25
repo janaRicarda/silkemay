@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function PageWrapper({children, title, quote, text1}) {
+export default function PageWrapper({children, height, gap}) {
     return(
-        <StyledSection>
+        <StyledSection $height={height} $gap={gap}>
            {children}
         </StyledSection>
     );
@@ -10,12 +10,12 @@ export default function PageWrapper({children, title, quote, text1}) {
 
 const StyledSection = styled.section`
 width: auto;
-height: 100vh;
+height: ${({$height}) => $height};
 margin: 1rem;
 padding: 2rem;
 display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: center;
-gap: 2rem;
+align-items: flex-start;
+gap: ${({$gap}) => $gap};
 `;

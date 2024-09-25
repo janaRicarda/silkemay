@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export default function Therapy() {
+export default function Therapy({handleMenu}) {
 return(
     <StyledLinkWrapper>
     <StyledLink href="/">KUNSTTHERAPIE</StyledLink>
@@ -9,7 +9,7 @@ return(
     <StyledLink href="/">KUNSTVERMITTLUNG</StyledLink>
     <StyledLink href="/">INKLUSIVE KUNSTPROJEKTE</StyledLink>
     <StyledLink href="/">MBSR</StyledLink>
-    <StyledLink href="/">ALLGEMEINES</StyledLink>
+    <StyledLink href="/therapie/allgemeines" onClick={handleMenu}>ALLGEMEINES</StyledLink>
     </StyledLinkWrapper>
 );
 }
@@ -21,7 +21,11 @@ flex-direction: column;
 justify-content: center;
 align-items: flex-end;
 font-size: 1.5rem;
-
+@media (min-width: 800px) {
+position: absolute;
+bottom: 15%;
+right: 5%;
+}
 `;
 
 const StyledLink = styled(Link)`
