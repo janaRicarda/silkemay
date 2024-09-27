@@ -1,5 +1,8 @@
+import { oilPainting } from "@/lib/data";
+import PageContent from "@/Components.js/PageContent";
+
 export default function ÖlmalereiPage() {
     return(
-        <h1>Ölmalerei</h1>
+        <PageContent content={oilPainting}/>
     )
 }

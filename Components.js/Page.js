@@ -12,10 +12,10 @@ const StyledSection = styled.section`
 width: auto;
 height: ${({$height}) => $height};
 margin: 1rem;
-padding: 2rem;
+padding: 0 2rem 1rem 2rem;
 display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: flex-start;
+//align-items: flex-start;
 gap: ${({$gap}) => $gap};
 `;

@@ -1,5 +1,8 @@
+import { drawings } from "@/lib/data";
+import PageContent from "@/Components.js/PageContent";
+
 export default function ZeichnenPage() {
     return(
-        <h1>Zeichnen</h1>
+        <PageContent content={drawings}/>
     )
 }

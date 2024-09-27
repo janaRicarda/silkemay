@@ -4,11 +4,11 @@ import Link from "next/link";
 export default function Footer() {
     return(
         <StyledFooter>
-            <StyledLink href="/">VITA</StyledLink>
-            <StyledLink href="/">KONTAKT</StyledLink>
+            <StyledLink href="/vita">VITA</StyledLink>
+            <StyledLink href="/kontakt">KONTAKT</StyledLink>
             <StyledLink href="/">IMPRESSUM</StyledLink>
             <StyledLink href="/">DATENSCHUTZ</StyledLink>
-            <StyledLink href="/">NEWSLETTER</StyledLink>
+            <StyledLink href="/newsletter">NEWSLETTER</StyledLink>
         </StyledFooter>
     )
 }
@@ -27,7 +27,7 @@ gap: 0.2rem;
 const StyledLink = styled(Link)`
 text-decoration: none;
 color: var(--light-font);
-opacity: 0.4;
+opacity: 0.5;
 font-size: 0.8rem;
 &:hover {
 opacity: 1;

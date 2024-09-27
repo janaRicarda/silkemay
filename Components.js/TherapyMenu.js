@@ -6,9 +6,9 @@ return(
     <StyledLinkWrapper>
     <StyledLink href="/therapie/kunsttherapie" onClick={handleMenu}>KUNSTTHERAPIE</StyledLink>
     <StyledLink href="/therapie/beratung" onClick={handleMenu}>BERATUNG</StyledLink>
-    <StyledLink href="/">KUNSTVERMITTLUNG</StyledLink>
+    <StyledLink href="/therapie/kunstvermittlung" onClick={handleMenu}>KUNSTVERMITTLUNG</StyledLink>
     <StyledLink href="/therapie/inklusive-kunstprojekte" onClick={handleMenu}>INKLUSIVE KUNSTPROJEKTE</StyledLink>
-    <StyledLink href="/">MBSR</StyledLink>
+    <StyledLink href="/therapie/MBSR" onClick={handleMenu}>MBSR</StyledLink>
     <StyledLink href="/therapie/allgemeines" onClick={handleMenu}>ALLGEMEINES</StyledLink>
     </StyledLinkWrapper>
 );

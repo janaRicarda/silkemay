@@ -2,6 +2,7 @@ import styled from "styled-components";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import Menu from "../public/menu.svg";
+import Link from "next/link";
 
 export default function Header() {
     const [showMenu, setShowMenu] = useState(false);
@@ -11,30 +12,38 @@ export default function Header() {
     }
 
 return(
-<>
+    <StyledHeader>
+        <StyledLink href="/">SILKE MAY</StyledLink>
         <StyledButton onClick={handleMenu}><StyledMenu /></StyledButton>
         {showMenu && <MobileMenu handleMenu={handleMenu}/>}
-        </>
+        </StyledHeader>
 );
 }
 
 const StyledHeader = styled.header`
-
-`;
-
-const StyledButton = styled.button`
-position: fixed;
+position: sticky;
 top: 0;
-right: 0;
-border-style: none;
-background: transparent;
-//backdrop-filter: blur(12.6px);
-//webkit-backdrop-filter: blur(12.6px);
-color: var(--background);
-margin: 1rem 1rem 1rem 0;
+width: 100%;
+height: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 2rem 0.5rem 3rem;
+background: white;
 @media(min-width: 800px) {
 display: none;
 }
+`;
+
+const StyledLink = styled(Link)`
+text-decoration: none;
+color: var(--dar-font);
+font-size: 1.5rem;
+`;
+
+const StyledButton = styled.button`
+border-style: none;
+background: transparent;
 `;
 
 const StyledMenu = styled(Menu)`

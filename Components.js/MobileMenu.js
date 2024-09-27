@@ -42,7 +42,7 @@ function handleShowInfos() {
                 </StyledMenuButton>
                 {showTherapy && <Therapy handleMenu={handleMenu}/>}
                 <StyledMenuButton onClick={handleShowInfos}>INFOS</StyledMenuButton>
-                {showInfos && <Infos />}
+                {showInfos && <Infos handleMenu={handleMenu}/>}
             </StyledNav>
             <StyledButton onClick={handleMenu}><StyledClose /></StyledButton>
         </StyledSection>
@@ -65,7 +65,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
-padding-right: 2rem;
+padding-right: 3rem;
 //animation: ${slideIn} 800ms linear;
 @media (orientation: landscape) {
 padding-right: 11rem;}
@@ -101,7 +101,7 @@ color: var(--light-font);
 position: absolute;
 top: 0;
 right: 0;
-margin: 1rem 1rem 1rem 0;
+margin: 1rem 2rem 0 0;
 `;
 
 const StyledClose = styled(Close)`

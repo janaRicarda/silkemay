@@ -1,5 +1,8 @@
-export default function PapiermalereiPage() {
+import { paperPainting } from "@/lib/data";
+import PageContent from "@/Components.js/PageContent";
+
+export default function papiermalereiPage() {
     return(
-        <h1>Papiermalerei</h1>
+        <PageContent content={paperPainting}/>
     )
 }

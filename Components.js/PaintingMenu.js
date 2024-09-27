@@ -22,7 +22,7 @@ align-items: flex-end;
 font-size: 1.5rem;
 @media (min-width: 800px) {
 position: absolute;
-top: 18%;
+top: 19%;
 right: 5%;
 }
 `;

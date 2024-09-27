@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export default function Infos() {
+export default function Infos({handleMenu}) {
 return(
     <StyledLinkWrapper>
-        <StyledLink href="/">VITA</StyledLink>
-        <StyledLink href="/">KONTAKT</StyledLink>
-        <StyledLink href="/">IMPRESSUM</StyledLink>
-        <StyledLink href="/">DATENSCHUTZ</StyledLink>
-        <StyledLink href="/">NEWSLETTER</StyledLink>
+        <StyledLink href="/vita" onClick={handleMenu}>VITA</StyledLink>
+        <StyledLink href="/kontakt" onClick={handleMenu}>KONTAKT</StyledLink>
+        <StyledLink href="/" onClick={handleMenu}>IMPRESSUM</StyledLink>
+        <StyledLink href="/" onClick={handleMenu}>DATENSCHUTZ</StyledLink>
+        <StyledLink href="/newsletter" onClick={handleMenu}>NEWSLETTER</StyledLink>
     </StyledLinkWrapper>
 )
 }
