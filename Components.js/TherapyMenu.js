@@ -4,10 +4,10 @@ import Link from "next/link";
 export default function Therapy({handleMenu}) {
 return(
     <StyledLinkWrapper>
-    <StyledLink href="/">KUNSTTHERAPIE</StyledLink>
-    <StyledLink href="/">BERATUNG</StyledLink>
+    <StyledLink href="/therapie/kunsttherapie" onClick={handleMenu}>KUNSTTHERAPIE</StyledLink>
+    <StyledLink href="/therapie/beratung" onClick={handleMenu}>BERATUNG</StyledLink>
     <StyledLink href="/">KUNSTVERMITTLUNG</StyledLink>
-    <StyledLink href="/">INKLUSIVE KUNSTPROJEKTE</StyledLink>
+    <StyledLink href="/therapie/inklusive-kunstprojekte" onClick={handleMenu}>INKLUSIVE KUNSTPROJEKTE</StyledLink>
     <StyledLink href="/">MBSR</StyledLink>
     <StyledLink href="/therapie/allgemeines" onClick={handleMenu}>ALLGEMEINES</StyledLink>
     </StyledLinkWrapper>
