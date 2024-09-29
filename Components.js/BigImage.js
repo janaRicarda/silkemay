@@ -1,19 +1,48 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { useState } from "react";
 
-export default function BigImage({handleShow, src}) {
+export default function BigImage({ 
+    handleShow, 
+    length,
+  /*   handlePrevPainting,
+    handleNextPainting, */
+    painting,
+    paintings
+}) {
+
+    const [paintingToShow, setPaintingToShow] = useState(painting);
+
+    const paintingIndex = paintings.findIndex((painting) => painting === painting);
+
+    const prevPaintingIndex = paintingIndex === 0 ? paintings.length - 1 : paintingIndex - 1;
+    const prevPainting = paintings[prevPaintingIndex];
+
+    const nextPaintingIndex = paintingIndex === paintings.length - 1 ? 0 : paintingIndex + 1;
+    const nextPainting = paintings[nextPaintingIndex];
+
+    function handlePrevPainting() {
+        setPaintingToShow(prevPainting);
+    };
+
+    function handleNextPainting() {
+            setPaintingToShow(nextPainting);
+    };
+    
     return(
         <StyledSection>
-            <StyledArticle>
-            <StyledImage src={src} alt="bild" width={500} height={500}/>
+            <PrevButton onClick={handlePrevPainting}>prev</PrevButton> 
+  <StyledArticle>
+            <StyledImage src={painting.src} alt={painting.title} width={500} height={500}/>
             <StyledOuterWrapper>
                 <StyledInnerWrapper>
-                    <p>title</p>
-                    <p>bild 1 von 12</p>
+                    <p>{painting.title}</p>
+                    <p>Bild {painting.id} von {length}</p>
                 </StyledInnerWrapper>
             <button onClick={handleShow}>close</button>
             </StyledOuterWrapper>
-            </StyledArticle>
+            </StyledArticle> 
+            <NextButton onClick={handleNextPainting}>next</NextButton> 
         </StyledSection>
     )
 }
@@ -62,4 +91,9 @@ const StyledInnerWrapper = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
+align-items: flex-start;
 `;
+
+const PrevButton = styled.button``;
+
+const NextButton = styled.button``;
