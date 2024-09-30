@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import BigImage from "./BigImage";
 
-export default function GallerySection({paintings}) {
+export default function GallerySection({paintings, title}) {
 
     const [show, setShow] = useState(false);
     const [paintingToShow, setPaintingToShow] = useState({});
@@ -16,40 +16,23 @@ export default function GallerySection({paintings}) {
         setPaintingToShow(painting);
         }
     };
-/* 
-    const paintingIndex = paintings.findIndex((painting) => painting === painting);
-
-    const prevPaintingIndex = paintingIndex === 0 ? paintings.length - 1 : paintingIndex - 1;
-    const prevPainting = paintings[prevPaintingIndex];
-
-    const nextPaintingIndex = paintingIndex === paintings.length - 1 ? 0 : paintingIndex + 1;
-    const nextPainting = paintings[nextPaintingIndex];
-
-    function handlePrevPainting() {
-        setPaintingToShow(prevPainting);
-    };
-
-    function handleNextPainting() {
-            setPaintingToShow(nextPainting);
-    }; */
 
     return(
         <StyledSection>
+            <StyledH2>{title}</StyledH2>
             <StyledArticle>
                 {paintings.map((painting, index) => (
                     <StyledButton key={painting.id} onClick={()=>handleShow(painting)}>
                         <StyledImage priority src={painting.src} alt={painting.title} width={500} height={500}/>
-                        {show && <BigImage 
+                    </StyledButton>
+                ))}
+            </StyledArticle>
+            {show && <BigImage 
                         handleShow={handleShow} 
                         length={paintingsLength}
                         painting={paintingToShow}
                         paintings={paintings}
-                     /*    handleNextPainting={handleNextPainting}
-                        handlePrevPainting={handlePrevPainting} */
                         />} 
-                    </StyledButton>
-                ))}
-            </StyledArticle>
         </StyledSection>
     )
 }
@@ -59,9 +42,15 @@ width: 100%;
 height: auto;
 padding: 0 3rem 0 3rem;
 display: flex;
+flex-direction: column;
 justify-content: center;
-align-items: center;
+align-items: flex-start;
+`;
 
+const StyledH2 = styled.h2`
+font-weight: 100;
+font-size: 1.5rem;
+margin-bottom: 0.5rem;
 `;
 
 const StyledArticle = styled.article`
@@ -90,6 +79,6 @@ height: inherit;
 
 const StyledImage = styled(Image)`
 width: 100%;
-//height: auto;
-height: 15rem;
+height: auto;
+//height: 15rem;
 `;

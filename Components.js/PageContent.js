@@ -11,9 +11,9 @@ export default function PageContent({content, src, alt, liststyle, padding}) {
             {content && content.map((item, index) => (
                 <StyledArticle key={index}>
                     {item.title &&  <StyledH1>{item.title}</StyledH1>}
-       
-        {item.quote &&  <StyledParagraph>{item.quote}</StyledParagraph> }
-        <p>{item.text}</p>
+       <p>{item.text}</p>
+        {item.quote &&  <StyledParagraph $italic>{item.quote}</StyledParagraph> }
+        <StyledParagraph>{item.author}</StyledParagraph>
         {item.list && <StyledUl $liststyle={liststyle} $padding={padding}>{item.list.map((listItem, index) => <li key={index}>{listItem}</li>)}</StyledUl>}
 {item.href && <div><span>{item.span1}</span>
 <StyledLink href={item.href} target="_blank"><span>{item.span2}</span></StyledLink></div>
@@ -61,7 +61,8 @@ font-size: 2rem;
 `;
 
 const StyledParagraph = styled.p`
-font-style: italic;
+font-style: ${({$italic}) => ($italic ? "italic" : "none")};
+color: ${({$italic}) => ($italic ? "var(--dark-font)" : "var(--background)")};
 `;
 
 const StyledLink = styled(Link)`
