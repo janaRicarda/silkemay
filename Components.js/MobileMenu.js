@@ -49,10 +49,6 @@ function handleShowInfos() {
     )
 }
 
-const slideIn = keyframes`
-from {left: -100vw}
-to {left: 0}
-`;
 
 const StyledSection = styled.section`
 width: 100%;
@@ -65,8 +61,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
-padding-right: 3rem;
-//animation: ${slideIn} 800ms linear;
+//padding-right: 3rem;
 @media (orientation: landscape) {
 padding-right: 11rem;}
 @media (min-width: 800px) {
@@ -79,18 +74,19 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
+margin-right: 3rem;
 `;
 
 const StyledLink = styled(Link)`
 text-decoration: none;
-font-size: 3rem;
+font-size: 2.5rem;
 color: var(--light-font);
 `;
 
 const StyledMenuButton = styled.button`
 border-style: none;
 background: transparent;
-font-size: 3rem;
+font-size: 2.5rem;
 color: var(--light-font);
 `;
 
