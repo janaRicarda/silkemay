@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function therapyPage() {
     return(
-        <PageWrapper height={"100vh"} gap={"2rem"}>
+        <PageWrapper height gap={"2rem"}>
         <StyledArticle> 
         <StyledParagraph $quote>&quot;Wenn die Achtsamkeit etwas Schönes berührt, offenbart sich dessen Schönheit. Wenn sie etwas Schmerzvolles berührt, wandelt sie es um und heilt es.&quot;</StyledParagraph>
         <StyledParagraph $accent>Thich Nhat Hanh</StyledParagraph>

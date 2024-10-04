@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function PageContent({content, src, alt, liststyle, padding}) {
     return(
-         <PageWrapper height={"auto"}> 
+         <PageWrapper> 
             <StyledSection> 
             {src &&<StyledImage src={src} alt={alt} width={500} height={500}/>}
             {content && content.map((item, index) => (
@@ -31,6 +31,7 @@ width: 100%;
 display: flex;
 flex-direction: column;
 gap: 1.5rem;
+margin-bottom: 1rem;
 `;
 
 const StyledImage = styled(Image)`

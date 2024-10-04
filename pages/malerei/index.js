@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function paintingPage() {
     return(
-        <PageWrapper height={"100vh"} gap={"2rem"}>
+        <PageWrapper height gap={"2rem"}>
           <StyledArticle> 
        <StyledParagraph $quote>&quot;Kunst ist Magie, befreit von der Lüge, Wahrheit zu sein.&quot;</StyledParagraph>
        <StyledParagraph $accent>Theodor W. Adorno</StyledParagraph>

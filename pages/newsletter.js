@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export default function newsletterPage() {
     return(
-        <PageWrapper height={"100vh"} align={"center"}>
+        <PageWrapper height>
         <StyledArticle>
             <StyledH1>NEWSLETTER</StyledH1>
             <p>Wenn Sie einen Newsletter erhalten möchten,
@@ -44,8 +44,8 @@ gap: 1rem;
 `;
 
 const StyledInput = styled.input`
-padding: 0.5rem;
-border: 1px solid var(--dark-font);
+padding: 1rem;
+border: 0.5px solid var(--dark-font);
 `;
 
 const StyledButton = styled.button`
@@ -55,7 +55,7 @@ opacity: 0.8;
 color: var(--light-font);
 font-size: 1.1rem;
 font-weight: 300;
-padding: 0.5rem;
+padding: 1rem;
 z-index: -1;
 &:hover {
 opacity: 1;

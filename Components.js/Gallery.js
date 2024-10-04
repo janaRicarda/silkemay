@@ -40,7 +40,7 @@ export default function GallerySection({paintings, title}) {
 const StyledSection = styled.section`
 width: 100%;
 height: auto;
-padding: 0 3rem 0 3rem;
+padding: 0 3rem 0 2rem;
 display: flex;
 flex-direction: column;
 justify-content: center;

@@ -28,7 +28,7 @@ height: auto;
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 1rem 2rem 0.5rem 3rem;
+padding: 1rem 2rem 0.5rem 2rem;
 background: white;
 @media(min-width: 800px) {
 display: none;
@@ -38,7 +38,7 @@ display: none;
 const StyledLink = styled(Link)`
 text-decoration: none;
 color: var(--dar-font);
-font-size: 1.5rem;
+font-size: 2rem;
 `;
 
 const StyledButton = styled.button`
@@ -47,6 +47,6 @@ background: transparent;
 `;
 
 const StyledMenu = styled(Menu)`
-width: 3rem;
-height: 3rem;
+width: 3.5rem;
+height: 3.5rem;
 `;
