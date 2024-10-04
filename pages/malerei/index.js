@@ -5,7 +5,7 @@ export default function paintingPage() {
     return(
         <PageWrapper height={"100vh"} gap={"2rem"}>
           <StyledArticle> 
-       <StyledParagraph $quote>"Kunst ist Magie, befreit von der Lüge, Wahrheit zu sein."</StyledParagraph>
+       <StyledParagraph $quote>&quot;Kunst ist Magie, befreit von der Lüge, Wahrheit zu sein.&quot;</StyledParagraph>
        <StyledParagraph $accent>Theodor W. Adorno</StyledParagraph>
        </StyledArticle> 
        <StyledParagraph>In der Malerei interessieren mich Strukturen, Überlagerungen, Widersprüchlichkeiten, Verdichtungen, Zusammenhänge und das Spiel zwischen transparenten und dichten Flächen.</StyledParagraph>

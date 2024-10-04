@@ -5,7 +5,7 @@ export default function therapyPage() {
     return(
         <PageWrapper height={"100vh"} gap={"2rem"}>
         <StyledArticle> 
-        <StyledParagraph $quote>"Wenn die Achtsamkeit etwas Schönes berührt, offenbart sich dessen Schönheit. Wenn sie etwas Schmerzvolles berührt, wandelt sie es um und heilt es."</StyledParagraph>
+        <StyledParagraph $quote>&quot;Wenn die Achtsamkeit etwas Schönes berührt, offenbart sich dessen Schönheit. Wenn sie etwas Schmerzvolles berührt, wandelt sie es um und heilt es.&quot;</StyledParagraph>
         <StyledParagraph $accent>Thich Nhat Hanh</StyledParagraph>
         </StyledArticle> 
         <StyledParagraph>Kreative Prozesse und gestalterische Methoden sind die Grundelemente meiner therapeutischen Arbeit. Im Gestalten liegt die Möglichkeit sich ganz in den Moment zu versenken und in der Gegenwart anzukommen.</StyledParagraph>
