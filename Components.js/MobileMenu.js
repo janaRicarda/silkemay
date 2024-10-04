@@ -52,7 +52,7 @@ function handleShowInfos() {
 
 const StyledSection = styled.section`
 width: 100%;
-height: 100%;
+height: 100vh;
 position: fixed;
 top: 0;
 left: 0;
@@ -61,7 +61,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
-//padding-right: 3rem;
 @media (orientation: landscape) {
 padding-right: 11rem;}
 @media (min-width: 800px) {
@@ -70,11 +69,12 @@ display: none;
 `;
 
 const StyledNav = styled.nav`
+width: 100%;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
-margin-right: 3rem;
+padding-right: 3rem;
 `;
 
 const StyledLink = styled(Link)`
@@ -87,6 +87,7 @@ const StyledMenuButton = styled.button`
 border-style: none;
 background: transparent;
 font-size: 2.5rem;
+padding: 0;
 color: var(--light-font);
 `;
 

@@ -15,7 +15,7 @@ export default function Footer() {
 
 const StyledFooter = styled.footer`
 position: absolute;
-bottom: 0;
+bottom: 1rem;
 width: 100%;
 display: flex;
 justify-content: space-between;
