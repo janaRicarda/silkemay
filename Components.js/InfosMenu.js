@@ -6,8 +6,8 @@ return(
     <StyledLinkWrapper>
         <StyledLink href="/vita" onClick={handleMenu}>VITA</StyledLink>
         <StyledLink href="/kontakt" onClick={handleMenu}>KONTAKT</StyledLink>
-        <StyledLink href="/" onClick={handleMenu}>IMPRESSUM</StyledLink>
-        <StyledLink href="/" onClick={handleMenu}>DATENSCHUTZ</StyledLink>
+        <StyledLink href="/impressum" onClick={handleMenu}>IMPRESSUM</StyledLink>
+        <StyledLink href="/datenschutz" onClick={handleMenu}>DATENSCHUTZ</StyledLink>
         <StyledLink href="/newsletter" onClick={handleMenu}>NEWSLETTER</StyledLink>
     </StyledLinkWrapper>
 )

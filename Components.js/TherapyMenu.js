@@ -21,11 +21,11 @@ flex-direction: column;
 justify-content: center;
 align-items: flex-end;
 font-size: 1.5rem;
-@media (min-width: 800px) {
+/* @media (min-width: 800px) {
 position: absolute;
 bottom: 15%;
 right: 5%;
-}
+} */
 `;
 
 const StyledLink = styled(Link)`

@@ -1,11 +1,11 @@
 import { inclusiveArtProjects } from "@/lib/data";
-import Example from "../../public/images/example.png";
+import InklusiveProjekte from "../../public/images/inklusiveprojekte.png";
 import PageContent from "@/Components.js/PageContent";
 
 export default function inklusiveKunstprojektePage() {
     return(
         <>
-        <PageContent content={inclusiveArtProjects} src={Example} alt={"example"}/>
+        <PageContent content={inclusiveArtProjects} src={InklusiveProjekte} alt={"Menschen auf Wiese mit Bändern"}/>
     </>
     );
 }

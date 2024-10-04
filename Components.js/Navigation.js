@@ -64,6 +64,12 @@ position: fixed;
 top: 0;
 left: 0; 
 }
+@media (min-width: 1000px) {
+width: 450px;
+}
+@media (min-width: 1200px) {
+width: 500px;
+}
 `;
 
 const StyledNav = styled.nav`

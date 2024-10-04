@@ -18,6 +18,7 @@ export default createGlobalStyle`
     --light-font: #ffffff;
     --light-background: #ffffff;
     --dark-font: #5c5b5b;
+    --link: #8b8888;
 }
   body {
   background: var(--light-background);
@@ -26,8 +27,13 @@ export default createGlobalStyle`
   font-family: system-ui;
  @media (min-width: 800px) {
  margin-left: 400px;
- //margin-left: 45vw;
  font-size: 1.1rem;
+ }
+ @media (min-width: 1000px) {
+ margin-left: 450px;
+ }
+ @media (min-width: 1200px) {
+ margin-left: 500px;
  }
   }
 

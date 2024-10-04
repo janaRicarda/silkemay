@@ -8,7 +8,6 @@ return(
         <StyledLink href="/malerei/oelmalerei" onClick={handleMenu}>ÖLMALEREI</StyledLink>
         <StyledLink href="/malerei/papiermalerei" onClick={handleMenu}>PAPIERMALEREI</StyledLink>
         <StyledLink href="/malerei/zeichnen" onClick={handleMenu}>ZEICHNEN</StyledLink>
-        <StyledLink href="/malerei/kalligraphie" onClick={handleMenu}>KALLIGRAPHIE</StyledLink>
     </StyledLinkWrapper>
 )
 }
@@ -20,11 +19,11 @@ flex-direction: column;
 justify-content: center;
 align-items: flex-end;
 font-size: 1.5rem;
-@media (min-width: 800px) {
+/* @media (min-width: 800px) {
 position: absolute;
 top: 19%;
 right: 5%;
-}
+} */
 `;
 
 const StyledLink = styled(Link)`

@@ -6,8 +6,8 @@ export default function Footer() {
         <StyledFooter>
             <StyledLink href="/vita">VITA</StyledLink>
             <StyledLink href="/kontakt">KONTAKT</StyledLink>
-            <StyledLink href="/">IMPRESSUM</StyledLink>
-            <StyledLink href="/">DATENSCHUTZ</StyledLink>
+            <StyledLink href="/impressum">IMPRESSUM</StyledLink>
+            <StyledLink href="/datenschutz">DATENSCHUTZ</StyledLink>
             <StyledLink href="/newsletter">NEWSLETTER</StyledLink>
         </StyledFooter>
     )

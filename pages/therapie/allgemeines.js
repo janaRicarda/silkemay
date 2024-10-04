@@ -1,5 +1,5 @@
 import { generalInfos } from "@/lib/data";
-import Example from "../../public/images/example.png";
+import Example from "../../public/images/beratung.png";
 import PageContent from "@/Components.js/PageContent";
 
 export default function AllgemeinesPage() {

@@ -11,11 +11,10 @@ export default function PageWrapper({children, height, gap}) {
 const StyledSection = styled.section`
 width: auto;
 height: ${({$height}) => $height};
-margin: 1rem;
+margin: 0 1rem 0 1rem;
 padding: 0 2rem 1rem 2rem;
 display: flex;
 flex-direction: column;
 justify-content: center;
-//align-items: flex-start;
 gap: ${({$gap}) => $gap};
 `;

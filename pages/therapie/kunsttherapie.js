@@ -1,11 +1,11 @@
 import { artTherapy } from "@/lib/data";
-import Example from "../../public/images/example.png";
+import Kunsttherapie from "../../public/images/kunsttherapie.png";
 import PageContent from "@/Components.js/PageContent";
 
 export default function KunsttherapiePage() {
     return(
         <>
-    <PageContent content={artTherapy} src={Example} alt={"example"}/>
+    <PageContent content={artTherapy} src={Kunsttherapie} alt={"Malutensilien"}/>
 </>
     );
 }

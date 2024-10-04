@@ -45,6 +45,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
+margin-bottom: 3rem;
 `;
 
 const StyledH2 = styled.h2`

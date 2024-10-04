@@ -68,7 +68,7 @@ z-index: 1;
 
 const StyledLink = styled(Link)`
 text-decoration: none;
-color: var(--dark-font);
+color: var(--link);
 &:hover {
 color: var(--background);
 }
