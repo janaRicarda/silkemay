@@ -44,6 +44,7 @@ font-size: 2rem;
 const StyledButton = styled.button`
 border-style: none;
 background: transparent;
+padding: 0;
 `;
 
 const StyledMenu = styled(Menu)`
