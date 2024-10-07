@@ -57,14 +57,20 @@ margin-bottom: 0.5rem;
 const StyledArticle = styled.article`
 width: 100%;
 display: grid;
-grid-template-columns: auto;
+grid-template-columns: auto auto;
 justify-content: space-evenly;
 gap: 1rem 1rem;
 @media (min-width: 600px) {
+grid-template-columns: auto auto auto;
+}
+@media (min-width: 800px) {
 grid-template-columns: auto auto;
 }
 @media (min-width: 1000px) {
 grid-template-columns: auto auto auto;
+}
+@media (min-width: 1500px) {
+grid-template-columns: auto auto auto auto;
 }
 `;
 
@@ -81,5 +87,5 @@ height: inherit;
 const StyledImage = styled(Image)`
 width: 100%;
 height: auto;
-//height: 15rem;
+aspect-ratio: 1 / 1;
 `;

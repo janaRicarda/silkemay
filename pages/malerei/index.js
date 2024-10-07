@@ -1,7 +1,7 @@
 import PageWrapper from "../../Components.js/Page";
 import styled from "styled-components";
 
-export default function paintingPage() {
+export default function PaintingPage() {
     return(
         <PageWrapper height gap={"2rem"}>
           <StyledArticle> 

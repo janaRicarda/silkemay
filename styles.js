@@ -1,7 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import {Outfit} from "next/font/google";
-
-
 
 
 export default createGlobalStyle`
@@ -17,7 +14,8 @@ export default createGlobalStyle`
     --background: #d95555;
     --light-font: #ffffff;
     --light-background: #ffffff;
-    --dark-font: #5c5b5b;
+    //--dark-font: #5c5b5b;
+    --dark-font: black;
     --link: #8b8888;
 }
   body {

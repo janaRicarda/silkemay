@@ -1,7 +1,7 @@
 import PageWrapper from "../../Components.js/Page";
 import styled from "styled-components";
 
-export default function therapyPage() {
+export default function TherapyPage() {
     return(
         <PageWrapper height gap={"2rem"}>
         <StyledArticle> 
