@@ -19,6 +19,10 @@ export default function PageContent({content, src, alt, liststyle, padding}) {
 {item.href && <div><span>{item.span1}</span>
 <StyledLink href={item.href} target="_blank"><span>{item.span2}</span></StyledLink></div>}
 
+{item.orderedList && <ol>
+    {item.orderedList.map((listItem, index) => <li key={index}>{listItem}</li>)}
+    </ol>}
+
                 </StyledArticle>
             ))}
         </StyledSection> 
