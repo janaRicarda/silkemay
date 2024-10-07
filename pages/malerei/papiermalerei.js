@@ -5,7 +5,7 @@ import { useState } from "react";
 import PulpPagination from "@/Components.js/Pagination";
 import { paginate } from "@/utils/paginate";
 
-export default function papiermalereiPage() {
+export default function PapiermalereiPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 9;
 
