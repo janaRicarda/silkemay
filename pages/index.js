@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styled from "styled-components";
-import MainNavigation from "@/Components.js/Navigation";
 import MobileLandingPage from "@/Components.js/MobileLandingPage";
 
 export default function Home() {
