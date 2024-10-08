@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { generalInfos } from "@/lib/data";
-import Example from "../../public/images/beratung.png";
 import PageContent from "@/Components.js/PageContent";
 
 export default function AllgemeinesPage() {
@@ -15,7 +14,7 @@ export default function AllgemeinesPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
-<PageContent content={generalInfos} src={Example} alt={"example"}/>
+<PageContent content={generalInfos} />
 </>
     );
 }

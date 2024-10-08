@@ -118,10 +118,12 @@ padding-left: ${({$padding}) => $padding};
 `;
 
 const StyledOl = styled.ol`
-padding: 1rem;
+list-style-position: inside;
+padding: 0rem;
 display: flex;
 flex-direction: column;
-gap: 1rem;
+gap: 2rem;
+margin-top: 1rem;
 `;
 
 const StyledOlItem = styled.li`
@@ -133,7 +135,6 @@ display: flex;
 flex-direction: column;
 gap: 1rem;
 margin-top: 1rem;
-margin-left: -1rem;
 `;
 
 const StyledInnerOl = styled.ol`
@@ -153,6 +154,7 @@ gap: 1rem;
 
 const StyledInsideInnerUl = styled.ul`
 list-style-type: disc;
+list-style-position: outside;
 display: flex;
 flex-direction: column;
 gap: 1rem;
