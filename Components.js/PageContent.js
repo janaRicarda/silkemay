@@ -7,7 +7,7 @@ export default function PageContent({content, src, alt, liststyle, padding}) {
     return(
          <PageWrapper> 
             <StyledSection> 
-            {src &&<StyledImage src={src} alt={alt} width={500} height={500}/>}
+            {src &&<StyledImage priority src={src} alt={alt} width={500} height={500}/>}
             {content && content.map((item, index) => (
                 <StyledArticle key={index}>
                     {item.title &&  <StyledH1>{item.title}</StyledH1>}

@@ -21,7 +21,7 @@ export default function TherapyPage() {
         </StyledArticle> 
         <StyledParagraph>Kreative Prozesse und gestalterische Methoden sind die Grundelemente meiner therapeutischen Arbeit. Im Gestalten liegt die Möglichkeit sich ganz in den Moment zu versenken und in der Gegenwart anzukommen.</StyledParagraph>
         <StyledParagraph>
-        Mehr finden Sie auf dieser Website
+        Mehr finden Sie auf dieser Website.
         </StyledParagraph>
         </PageWrapper>
         </>
@@ -41,7 +41,7 @@ const StyledParagraph = styled.p`
 font-style: ${({$quote}) => ($quote ? "italic" : "none")};
 font-size: ${({$quote}) => ($quote ? "1.3rem" : "1.1rem")};
 color: ${({$accent}) => ($accent ? "var(--background)" : "var(--dark-font)")}; 
-text-align: left;
+text-align: ${({$quote}) => ($quote ? "justify" : "left")};
 `;
 
 
