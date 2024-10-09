@@ -39,7 +39,7 @@ function handleRemoveMenus() {
                 THERAPIE
                 </StyledLink> 
             </StyledArticle> 
-            {showTherapy && <Therapy />}
+            {showTherapy && <Therapy/>}
             </StyledNav>
             <Footer />
         </StyledNavSection>

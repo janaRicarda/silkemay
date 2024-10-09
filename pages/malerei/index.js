@@ -40,7 +40,7 @@ const StyledParagraph = styled.p`
 font-style: ${({$quote}) => ($quote ? "italic" : "none")};
 font-size: ${({$quote}) => ($quote ? "1.3rem" : "1.1rem")};
 color: ${({$accent}) => ($accent ? "var(--background)" : "var(--dark-font)")}; 
-text-align: left;
+text-align: ${({$quote}) => ($quote ? "justify" : "left")};
 
 `;
 

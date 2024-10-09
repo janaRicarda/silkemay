@@ -19,10 +19,18 @@ export default function MBSRPage() {
         <meta property="og:type" content="website" />
       </Head>
     <PageContent content={mbsr} src={Mbsr} alt={"Steinkreis"}/>
+    <StyledDiv>
     <StyledImage src={Logo} alt="MBSR Logo" width={500} height={500} />
+    </StyledDiv>
 </>
     );
 }
+const StyledDiv = styled.div`
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+`;
 
 const StyledImage = styled(Image)`
 width: 400px;

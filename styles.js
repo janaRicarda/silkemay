@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export default createGlobalStyle`
 *,
   *::before,
@@ -22,7 +21,7 @@ export default createGlobalStyle`
   background: var(--light-background);
   color: var(--dark-font);
   font-weight: 100;
-  font-family: system-ui;
+ font-family: system-ui;
  @media (min-width: 800px) {
  margin-left: 400px;
  font-size: 1.1rem;

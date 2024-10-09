@@ -1,13 +1,21 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Painting({handleMenu}) {
+
+    const router = useRouter();
+    const aktuellespage = router.pathname === "/malerei/aktuelles";
+    const oelPage = router.pathname === "/malerei/oelmalerei";
+    const pulpPage = router.pathname === "/malerei/papiermalerei";
+    const drawingPage = router.pathname === "/malerei/zeichnen";
+
 return(
     <StyledLinkWrapper>
-        <StyledLink href="/malerei/aktuelles" onClick={handleMenu}>AKTUELLES</StyledLink>
-        <StyledLink href="/malerei/oelmalerei" onClick={handleMenu}>ÖLMALEREI</StyledLink>
-        <StyledLink href="/malerei/papiermalerei" onClick={handleMenu}>PAPIERMALEREI</StyledLink>
-        <StyledLink href="/malerei/zeichnen" onClick={handleMenu}>ZEICHNEN</StyledLink>
+        <StyledLink $active={aktuellespage} href="/malerei/aktuelles" onClick={handleMenu}>AKTUELLES</StyledLink>
+        <StyledLink $active={oelPage} href="/malerei/oelmalerei" onClick={handleMenu}>ÖLMALEREI</StyledLink>
+        <StyledLink $active={pulpPage} href="/malerei/papiermalerei" onClick={handleMenu}>PAPIERMALEREI</StyledLink>
+        <StyledLink $active={drawingPage} href="/malerei/zeichnen" onClick={handleMenu}>ZEICHNEN</StyledLink>
     </StyledLinkWrapper>
 )
 }
@@ -29,7 +37,7 @@ right: 5%;
 const StyledLink = styled(Link)`
 text-decoration: none;
 color: var(--light-font);
-opacity: 0.5;
+opacity: ${({$active}) => ($active ? "1" : "0.5")};
 &:hover {
 opacity: 1;
 }
