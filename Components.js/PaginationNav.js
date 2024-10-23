@@ -1,45 +1,35 @@
 import styled from "styled-components";
-import GallerySection from "./Gallery";
 import Back from "../public/arrow-left.svg";
 import Forward from "../public/arrow-right.svg";
 
-export default function PulpPagination({ items, currentPage, onPageChange }) {
-  const pages = [1, 2, 3, 4, 5, 6, 7];
-
-  function handleBackwards() {
-    onPageChange(currentPage - 1);
-  }
-
-  function handleForwards() {
-    onPageChange(currentPage + 1);
-  }
-
+export default function PaginationNav({ currentPage, onPageChange, pages }) {
   return (
-    <article>
-      <GallerySection paintings={items} id={currentPage} />
-      <StyledList>
-        <StyledDiv>
-          {currentPage != 1 && (
-            <StyledButton onClick={handleBackwards}>
-              <StyledBack />
-            </StyledButton>
-          )}
-          <p> Seite {currentPage} von 7</p>
-          {currentPage != 7 && (
-            <StyledButton onClick={handleForwards}>
-              <StyledForward />
-            </StyledButton>
-          )}
-        </StyledDiv>
-        <StyledDiv>
-          {pages.map((page) => (
-            <StyledListItem $itemActive={page === currentPage} key={page}>
-              <a onClick={() => onPageChange(page)}>{page}</a>
-            </StyledListItem>
-          ))}
-        </StyledDiv>
-      </StyledList>
-    </article>
+    <StyledList>
+      <StyledDiv>
+        {currentPage != 1 && (
+          <StyledButton
+            aria-label="previous page"
+            onClick={() => onPageChange("previous")}>
+            <StyledBack />
+          </StyledButton>
+        )}
+        <p> Seite {currentPage} von 7</p>
+        {currentPage != 7 && (
+          <StyledButton
+            aria-label="next page"
+            onClick={() => onPageChange("next")}>
+            <StyledForward />
+          </StyledButton>
+        )}
+      </StyledDiv>
+      <StyledDiv>
+        {pages.map((page) => (
+          <StyledListItem $itemActive={page === currentPage} key={page}>
+            <a onClick={() => onPageChange(page)}>{page}</a>
+          </StyledListItem>
+        ))}
+      </StyledDiv>
+    </StyledList>
   );
 }
 

@@ -11,6 +11,7 @@ export default function GallerySection({ paintings, title, id }) {
   const paintingToShow = paintings[currentImageIndex];
 
   const paintingsLength = paintings.length;
+  const index = (currentImageIndex % paintingsLength) + 1;
 
   function handleShow(index) {
     setShow(!show);
@@ -65,6 +66,7 @@ export default function GallerySection({ paintings, title, id }) {
           handlePainting={handlePainting}
           paintingToShow={paintingToShow}
           length={paintingsLength}
+          index={index}
         />
       )}
     </StyledSection>

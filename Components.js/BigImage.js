@@ -9,11 +9,12 @@ export default function BigImage({
   handlePainting,
   paintingToShow,
   length,
+  index,
 }) {
-  //* close component when escape is clicked
+  //* accessibility: close component when escape is clicked
   useEffect(() => {
-    function handleEscapeKey() {
-      if (event.code === "Escape") {
+    function handleEscapeKey({ code }) {
+      if (code === "Escape") {
         handleShow();
       }
     }
@@ -22,6 +23,8 @@ export default function BigImage({
 
     return () => window.removeEventListener("keydown", handleEscapeKey);
   });
+
+  const { src, title } = paintingToShow;
 
   return (
     <StyledSection>
@@ -36,12 +39,12 @@ export default function BigImage({
         onClick={() => handlePainting("previous")}
       />
       <StyledArticle>
-        <StyledImage src={paintingToShow.src} alt={paintingToShow.title} />
+        <StyledImage src={src} alt={title} />
         <StyledOuterWrapper>
           <StyledInnerWrapper>
             <p>{paintingToShow.title}</p>
             <p>
-              Bild {paintingToShow.id} von {length}
+              Bild {index} von {length}
             </p>
           </StyledInnerWrapper>
           <StyledButton onClick={handleShow}>close</StyledButton>
