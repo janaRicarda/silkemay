@@ -54,7 +54,6 @@ export default function PapiermalereiPage() {
       <GallerySection paintings={slicedItems} id={currentPage} />
       <PaginationNav
         pages={pagesArray}
-        items={slicedItems}
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
