@@ -13,7 +13,7 @@ export default function useClientWidth(operator, number) {
     window.addEventListener("resize", getClientWidth);
 
     return () => window.removeEventListener("resize", getClientWidth);
-  });
+  }, []);
 
   const compareOperators = {
     "<": () => {
