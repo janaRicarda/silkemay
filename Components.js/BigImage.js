@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Prev from "../public/chevron-left.svg";
 import Next from "../public/chevron-right.svg";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function BigImage({
   handleShow,
@@ -24,56 +24,74 @@ export default function BigImage({
     return () => window.removeEventListener("keydown", handleEscapeKey);
   });
 
+  const dialogRef = useRef();
+
+  //* opens dialog for accessibility
+  useEffect(() => {
+    dialogRef.current.showModal();
+  }, []);
+
   const { src, title } = paintingToShow;
 
   return (
-    <StyledSection>
-      <StyledPrev
-        tabIndex={0}
-        onKeyDown={(event) => {
-          if (event.code === "Enter") {
-            handlePainting("previous");
-          }
-        }}
-        aria-label="previous image"
-        onClick={() => handlePainting("previous")}
-      />
-      <StyledArticle>
-        <StyledImage src={src} alt={title} />
-        <StyledOuterWrapper>
-          <StyledInnerWrapper>
-            <p>{paintingToShow.title}</p>
-            <p>
-              Bild {index} von {length}
-            </p>
-          </StyledInnerWrapper>
-          <StyledButton onClick={handleShow}>close</StyledButton>
-        </StyledOuterWrapper>
-      </StyledArticle>
-      <StyledNext
-        tabIndex={0}
-        onKeyDown={(event) => {
-          if (event.code === "Enter") {
-            handlePainting("next");
-          }
-        }}
-        aria-label="next image"
-        onClick={() => handlePainting("next")}
-      />
-    </StyledSection>
+    <StyledDialog ref={dialogRef}>
+      <StyledSection>
+        <StyledPrev
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.code === "Enter") {
+              handlePainting("previous");
+            }
+          }}
+          aria-label="previous image"
+          onClick={() => handlePainting("previous")}
+        />
+        <StyledArticle>
+          <StyledImage src={src} alt={title} />
+          <StyledOuterWrapper>
+            <StyledInnerWrapper>
+              <p>{paintingToShow.title}</p>
+              <p>
+                Bild {index} von {length}
+              </p>
+            </StyledInnerWrapper>
+            <StyledButton onClick={handleShow}>close</StyledButton>
+          </StyledOuterWrapper>
+        </StyledArticle>
+        <StyledNext
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.code === "Enter") {
+              handlePainting("next");
+            }
+          }}
+          aria-label="next image"
+          onClick={() => handlePainting("next")}
+        />
+      </StyledSection>
+    </StyledDialog>
   );
 }
 
-const StyledSection = styled.section`
+const StyledDialog = styled.dialog`
+  display: flex;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
+  background: transparent;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
+  align-self: center;
+  justify-self: center;
+  border: none;
+  &&::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+  }
+`;
+
+const StyledSection = styled.section`
+  display: flex;
+  justify-items: center;
+  align-items: center;
 `;
 
 const StyledArticle = styled.article`
@@ -134,6 +152,14 @@ const StyledPrev = styled(Prev)`
     transform: scale(1.5);
     opacity: 1;
   }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
+  }
 `;
 
 const StyledNext = styled(Next)`
@@ -149,5 +175,13 @@ const StyledNext = styled(Next)`
   &:hover {
     transform: scale(1.5);
     opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
   }
 `;
