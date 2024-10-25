@@ -5,7 +5,7 @@ import PageContent from "@/Components.js/PageContent";
 import { useState } from "react";
 import PaginationNav from "@/Components.js/PaginationNav";
 import { paginate } from "@/utils/paginate";
-import GallerySection from "@/Components.js/Gallery";
+import GallerySection from "@/Components.js/GallerySection";
 
 export default function PapiermalereiPage() {
   const [currentPage, setCurrentPage] = useState(1);

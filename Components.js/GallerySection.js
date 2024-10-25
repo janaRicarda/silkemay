@@ -45,9 +45,9 @@ export default function GallerySection({ paintings, title, id }) {
   return (
     <StyledSection key={id}>
       <StyledH2>{title}</StyledH2>  
-      <StyledArticle variants={article} initial="hidden" animate="show">
+      <StyledArticle as={motion.article} variants={article} initial="hidden" animate="show">
         {paintings.map((painting, index) => (
-          <StyledButton
+          <StyledButton as={motion.button}
             key={painting.id}
             variants={button}
             onClick={() => handleShow(index)}>

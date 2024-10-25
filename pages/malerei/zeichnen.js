@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { drawings } from "@/lib/data";
 import PageContent from "@/Components.js/PageContent";
-import GallerySection from "@/Components.js/Gallery";
+import GallerySection from "@/Components.js/GallerySection";
 import { drawingImages } from "@/lib/gallery";
 
 export default function ZeichnenPage() {
