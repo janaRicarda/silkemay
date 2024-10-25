@@ -44,7 +44,7 @@ export default function GallerySection({ paintings, title, id }) {
 
   return (
     <StyledSection key={id}>
-      <StyledH2>{title}</StyledH2>
+      <StyledH2>{title}</StyledH2>  
       <StyledArticle variants={article} initial="hidden" animate="show">
         {paintings.map((painting, index) => (
           <StyledButton
