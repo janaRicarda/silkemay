@@ -50,7 +50,9 @@ export default function BigImage({
           <StyledImage src={src} alt={title} />
           <StyledOuterWrapper>
             <StyledInnerWrapper>
-              <p>{paintingToShow.title}</p>
+              <StyledParagraph>{paintingToShow.title}</StyledParagraph>
+              <p>{paintingToShow.material}</p>
+              <p>{paintingToShow.size}</p>
               <p>
                 Bild {index} von {length}
               </p>
@@ -128,6 +130,11 @@ const StyledInnerWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+`;
+
+const StyledParagraph = styled.p`
+  font-style: italic;
 `;
 
 const StyledButton = styled.button`
