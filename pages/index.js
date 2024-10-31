@@ -16,10 +16,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MobileLandingPage/>
-       <StyledContentSection>
+      <StyledContentSection>
         <StyledParagraph>KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE / BILDENDE KÜNSTLERIN</StyledParagraph>
         </StyledContentSection> 
-           
     </>
   );
 }
