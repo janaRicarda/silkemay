@@ -17,7 +17,7 @@ export default async function handler(req, res) {
 
       const data = {
         email_address: email,
-        status: "subscribed",
+        status: "pending",
       };
 
       const response = await fetch(url, {
@@ -34,7 +34,13 @@ export default async function handler(req, res) {
         return res.status(400).json({message: "There was an error subscribing to the newsletter."});
       } */
       if (responseData.title == "Member Exists") {
-        return res.status(400).json({message: "Sie sind bereits angemeldet"});
+        return res.status(400).json({message: "Sie sind bereits angemeldet. Das freut uns sehr!"});
       }
-      return res.status(201).json({message: "Ihre Anmeldung war erfolgreich!"});
+      if (responseData.title == "Invalid Resource") {
+        return res.status(400).json({message: "Die Email-Adresse ist leider ungültig"});
+      }
+      if (responseData.title == "List Not Found" || "Bad Request") {
+        return res.status(400).json({message: "Leider ist etwas schiefgelaufen. Wir werden das Problem beheben. Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."})
+      }
+      return res.status(201).json({message: "Ihre Anmeldung war erfolgreich! Schauen Sie bitte in Ihrem Email Postfach nach, um die Anmeldung zu bestätigen."});
   }
