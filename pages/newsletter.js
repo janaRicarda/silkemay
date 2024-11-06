@@ -9,7 +9,7 @@ export default function newsletterPage() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-
+        
         const response = await fetch("/api/subscribe", {
             method: "POST",
             headers: {
@@ -17,12 +17,13 @@ export default function newsletterPage() {
             },
             body: JSON.stringify({ email }),
         });
-
+        event.target.reset();
         const data = await response.json();
             setMessage(data.message);
             setTimeout(() => {
                 setMessage("");
             }, 4000);
+            
     };
 
     return(
@@ -37,8 +38,9 @@ export default function newsletterPage() {
         <meta property="og:type" content="website" />
       </Head>
         <PageWrapper height>
+        <StyledH1>NEWSLETTER</StyledH1>
         <StyledArticle>
-            <StyledH1>NEWSLETTER</StyledH1>
+            
             <p>Wenn Sie meinen Newsletter erhalten möchten,
             tragen Sie sich bitte hier ein:</p>
             <StyledForm onSubmit={handleSubmit}>
@@ -53,7 +55,7 @@ export default function newsletterPage() {
             required/>
             <StyledButton type="submit">Anmelden</StyledButton>
             </StyledForm>
-            {message && <p>{message}</p>}
+            {message && <StyledDiv>{message}</StyledDiv>}
         </StyledArticle>
         </PageWrapper>
         </>
@@ -67,6 +69,7 @@ justify-content: center;
 align-items: center;
 text-align: center;
 gap: 1rem;
+position: relative;
 `;
 
 const StyledH1 = styled.h1`
@@ -74,6 +77,7 @@ margin-top: 1.5rem;
 margin-bottom: 1rem;
 font-weight: 100;
 font-size: 2rem;
+text-align: center;
 `;
 
 const StyledForm = styled.form`
@@ -100,4 +104,16 @@ cursor: pointer;
 &:hover {
 opacity: 1;
 }
+`;
+
+const StyledDiv = styled.div`
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+top: 0;
+background: var(--background);
+color: var(--light-font);
 `;
