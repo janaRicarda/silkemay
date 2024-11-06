@@ -1,9 +1,30 @@
 import Head from "next/head";
-import Link from "next/link";
 import PageWrapper from "../Components.js/Page";
 import styled from "styled-components";
+import { useState } from "react";
 
 export default function newsletterPage() {
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+        const response = await fetch("/api/subscribe", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email }),
+        });
+
+        const data = await response.json();
+            setMessage(data.message);
+            setTimeout(() => {
+                setMessage("");
+            }, 4000);
+    };
+
     return(
         <>
          <Head>
@@ -18,14 +39,21 @@ export default function newsletterPage() {
         <PageWrapper height>
         <StyledArticle>
             <StyledH1>NEWSLETTER</StyledH1>
-            <p>Wenn Sie einen Newsletter erhalten möchten,
+            <p>Wenn Sie meinen Newsletter erhalten möchten,
             tragen Sie sich bitte hier ein:</p>
-            <StyledForm>
-            <StyledInput type="email" placeholder="Email-Adresse eintragen.." required/>
+            <StyledForm onSubmit={handleSubmit}>
+            <StyledInput 
+            type="email" 
+            name="email" 
+            placeholder="Email-Adresse eintragen..." 
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            autoCapitalize="off"
+            autoCorrect="off"
+            required/>
             <StyledButton type="submit">Anmelden</StyledButton>
             </StyledForm>
-            <p>Wenn Sie sich abmelden wollen,
-            folgen Sie bitte diesem <span><StyledLink href="/">Link</StyledLink></span>.</p>
+            {message && <p>{message}</p>}
         </StyledArticle>
         </PageWrapper>
         </>
@@ -57,7 +85,7 @@ gap: 1rem;
 
 const StyledInput = styled.input`
 padding: 1rem;
-border: 0.5px solid var(--dark-font);
+border: 0.5px solid var(--background);
 `;
 
 const StyledButton = styled.button`
@@ -68,20 +96,8 @@ color: var(--light-font);
 font-size: 1.1rem;
 font-weight: 300;
 padding: 1rem;
-z-index: -1;
+cursor: pointer;
 &:hover {
 opacity: 1;
-}
-@media (min-width: 800px) {
-cursor: pointer;
-z-index: 1;
-}
-`;
-
-const StyledLink = styled(Link)`
-text-decoration: none;
-color: var(--link);
-&:hover {
-color: var(--background);
 }
 `;
