@@ -3,7 +3,7 @@ import PageWrapper from "../Components.js/Page";
 import styled from "styled-components";
 import { useState } from "react";
 
-export default function newsletterPage() {
+export default function NewsletterPage() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
