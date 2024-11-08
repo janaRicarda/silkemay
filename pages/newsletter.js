@@ -40,7 +40,6 @@ export default function NewsletterPage() {
         <PageWrapper height>
         <StyledH1>NEWSLETTER</StyledH1>
         <StyledArticle>
-            
             <p>Wenn Sie meinen Newsletter erhalten möchten,
             tragen Sie sich bitte hier ein:</p>
             <StyledForm onSubmit={handleSubmit}>
@@ -57,6 +56,9 @@ export default function NewsletterPage() {
             </StyledForm>
             {message && <StyledDiv>{message}</StyledDiv>}
         </StyledArticle>
+        <StyledInfoArticle>
+        <p>Mit dem Klick auf Anmeldung, erklären Sie sich einverstanden, einen Einladungslink für den Newsletter zu erhalten. Solange Sie die Einladung nicht annehmen, wird Ihre Emailadresse nicht gespeichert.</p>
+        </StyledInfoArticle>
         </PageWrapper>
         </>
     );
@@ -116,4 +118,9 @@ position: absolute;
 top: 0;
 background: var(--background);
 color: var(--light-font);
+`;
+
+const StyledInfoArticle = styled.article`
+margin-top: 2rem;
+font-size: 0.7rem;
 `;

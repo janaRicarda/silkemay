@@ -1,6 +1,7 @@
 import Head from "next/head";
 import PageWrapper from "../../Components.js/Page";
 import styled from "styled-components";
+import Painting from "@/Components.js/PaintingMenu";
 
 export default function PaintingPage() {
     return(
@@ -23,6 +24,9 @@ export default function PaintingPage() {
        <StyledParagraph>
         Eine Auswahl meiner Arbeiten finden Sie auf dieser Website.
        </StyledParagraph>
+       <StyledDiv>
+       <Painting mobileIndexPage/>
+       </StyledDiv>
         </PageWrapper>
         </>
     );
@@ -41,7 +45,13 @@ font-style: ${({$quote}) => ($quote ? "italic" : "none")};
 font-size: ${({$quote}) => ($quote ? "1.3rem" : "1.1rem")};
 color: ${({$accent}) => ($accent ? "var(--background)" : "var(--dark-font)")}; 
 text-align: ${({$quote}) => ($quote ? "justify" : "left")};
+`;
 
+const StyledDiv = styled.div`
+display: flex;
+@media (min-width: 800px) {
+display: none;
+}
 `;
 
 

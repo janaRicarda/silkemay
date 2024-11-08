@@ -1,6 +1,7 @@
 import Head from "next/head";
 import PageWrapper from "../../Components.js/Page";
 import styled from "styled-components";
+import Therapy from "@/Components.js/TherapyMenu";
 
 export default function TherapyPage() {
     return(
@@ -23,6 +24,9 @@ export default function TherapyPage() {
         <StyledParagraph>
         Mehr finden Sie auf dieser Website.
         </StyledParagraph>
+        <StyledDiv>
+        <Therapy mobileIndexPage />
+        </StyledDiv>
         </PageWrapper>
         </>
     );
@@ -34,7 +38,6 @@ flex-direction: column;
 justify-content: center;
 align-items: flex-start;
 margin-left: 5rem;
-
 `;
 
 const StyledParagraph = styled.p`
@@ -42,6 +45,13 @@ font-style: ${({$quote}) => ($quote ? "italic" : "none")};
 font-size: ${({$quote}) => ($quote ? "1.3rem" : "1.1rem")};
 color: ${({$accent}) => ($accent ? "var(--background)" : "var(--dark-font)")}; 
 text-align: ${({$quote}) => ($quote ? "justify" : "left")};
+`;
+
+const StyledDiv = styled.div`
+display: flex;
+@media (min-width: 800px) {
+display: none;
+}
 `;
 
 
