@@ -1,11 +1,11 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Link from "next/link";
 import { useState } from "react";
 import Footer from "./Footer";
-import Painting from "./PaintingMenu";
-import Therapy from "./TherapyMenu";
+import PaintingMenu from "./PaintingMenu";
+import TherapyMenu from "./TherapyMenu";
 
-export default function MainNavigation({ indexPage }) {
+export default function DesktopNavigation() {
   const [showPainting, setShowPainting] = useState(false);
   const [showTherapy, setShowTherapy] = useState(false);
 
@@ -28,7 +28,7 @@ export default function MainNavigation({ indexPage }) {
     <>
       <StyledNavSection>
         <StyledNav>
-          {showPainting && <Painting />}
+          {showPainting && <PaintingMenu />}
           <StyledArticle>
             <StyledLink href="/malerei" onClick={handleShowPainting}>
               MALEREI
@@ -40,7 +40,7 @@ export default function MainNavigation({ indexPage }) {
               THERAPIE
             </StyledLink>
           </StyledArticle>
-          {showTherapy && <Therapy />}
+          {showTherapy && <TherapyMenu />}
         </StyledNav>
         <Footer />
       </StyledNavSection>
@@ -49,21 +49,18 @@ export default function MainNavigation({ indexPage }) {
 }
 
 const StyledNavSection = styled.section`
-  display: none;
-  @media (min-width: 800px) {
-    width: 100%;
-    height: 100vh;
-    background: var(--background);
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    display: flex;
-    width: 400px;
-    //width: 45vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
+  height: 100vh;
+  background: var(--background);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+  width: 400px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
   @media (min-width: 1000px) {
     width: 450px;
   }

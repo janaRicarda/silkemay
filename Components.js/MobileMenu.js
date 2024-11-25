@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import { keyframes } from "styled-components";
 import Link from "next/link";
-import Painting from "./PaintingMenu";
-import Therapy from "./TherapyMenu";
+import PaintingMenu from "./PaintingMenu";
+import TherapyMenu from "./TherapyMenu";
 import Infos from "./InfosMenu";
 import { useState } from "react";
 import Close from "../public/close.svg";
 
-export default function MobileMenu({ handleMenu }) {
+export default function MobileMenu({ closeMenu }) {
   const [showPainting, setShowPainting] = useState(false);
   const [showTherapy, setShowTherapy] = useState(false);
   const [showInfos, setShowInfos] = useState(false);
@@ -36,16 +35,16 @@ export default function MobileMenu({ handleMenu }) {
         <StyledMenuButton onClick={handleShowPainting}>
           MALEREI
         </StyledMenuButton>
-        {showPainting && <Painting handleMenu={handleMenu} />}
+        {showPainting && <PaintingMenu />}
         <StyledMenuButton onClick={handleShowTherapy}>
           THERAPIE
         </StyledMenuButton>
-        {showTherapy && <Therapy handleMenu={handleMenu} />}
+        {showTherapy && <TherapyMenu />}
         <StyledMenuButton onClick={handleShowInfos}>INFOS</StyledMenuButton>
-        {showInfos && <Infos handleMenu={handleMenu} />}
+        {showInfos && <Infos />}
       </StyledNav>
-      <StyledButton onClick={handleMenu}>
-        <StyledClose />
+      <StyledButton>
+        <StyledClose onClick={closeMenu} />
       </StyledButton>
     </StyledSection>
   );

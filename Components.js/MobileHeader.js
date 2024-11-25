@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import MobileMenu from "./MobileMenu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "../public/menu.svg";
 import Link from "next/link";
-import useClientWidth from "@/hooks/useClientWidth";
+import { useRouter } from "next/router";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -12,19 +12,22 @@ export default function Header() {
     setShowMenu(!showMenu);
   }
 
-  const isTablet = useClientWidth(">", 800);
+  const pathname = useRouter().pathname;
+
+  //* closes menu on every route change
+  useEffect(() => {
+    setShowMenu(false);
+  }, [pathname]);
 
   return (
     <>
-      {isTablet && (
-        <StyledHeader>
-          <StyledLink href="/">SILKE MAY</StyledLink>
-          <StyledButton onClick={handleMenu}>
-            <StyledMenu />
-          </StyledButton>
-          {showMenu && <MobileMenu handleMenu={handleMenu} />}
-        </StyledHeader>
-      )}
+      <StyledHeader>
+        <StyledLink href="/">SILKE MAY</StyledLink>
+        <StyledButton onClick={handleMenu}>
+          <StyledMenu />
+        </StyledButton>
+        {showMenu && <MobileMenu closeMenu={handleMenu} />}
+      </StyledHeader>
     </>
   );
 }
@@ -39,6 +42,7 @@ const StyledHeader = styled.header`
   align-items: center;
   padding: 1rem 2rem 0.5rem 2rem;
   background: white;
+  z-index: 1;
 `;
 
 const StyledLink = styled(Link)`
