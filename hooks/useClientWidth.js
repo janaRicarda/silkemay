@@ -1,51 +1,52 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function useClientWidth(operator, number) {
+export default function useClientWidth({
+  disable = false,
+  operator,
+  number,
+} = {}) {
   const [clientWidth, setClientWidth] = useState();
 
+  // disable boolean (if provided) can prevent useEffect from running to safe memory
   useEffect(() => {
-    function getClientWidth() {
+    if (disable) return;
+
+    function updateClientWidth() {
       setClientWidth(window.innerWidth);
     }
 
-    getClientWidth();
+    updateClientWidth();
+    window.addEventListener("resize", updateClientWidth);
 
-    window.addEventListener("resize", getClientWidth);
-
-    return () => window.removeEventListener("resize", getClientWidth);
-  }, []);
+    return () => window.removeEventListener("resize", updateClientWidth);
+  }, [disable]);
 
   const compareOperators = {
-    "<": () => {
-      return number < clientWidth;
-    },
-    ">": () => {
-      return number > clientWidth;
-    },
-    "=": () => {
-      return number === clientWidth;
-    },
+    "<": () => clientWidth < number,
+    "<=": () => clientWidth <= number,
+    ">": () => clientWidth > number,
+    ">=": () => clientWidth >= number,
+    "=": () => clientWidth === number,
   };
 
-  function compare() {
-    if (compareOperators[operator]) {
-      return compareOperators[operator]();
-    } else {
-      throw new Error("Invalid Operator");
-    }
+  // type checking
+  if (disable && typeof disable !== `boolean`) {
+    throw new Error("disable must be of type boolean");
+  }
+  if (
+    (operator && typeof operator !== `string`) ||
+    (operator && !(operator in compareOperators))
+  ) {
+    throw new Error(
+      "Invalid operator. Use one of: <, <=, >, >=, = as type string."
+    );
+  }
+  if ((number && typeof number !== `number`) || (number && number < 0)) {
+    throw new Error("The 'number' option must be a positive number.");
   }
 
-  if (operator || number) {
-    if (
-      typeof operator !== "string" ||
-      operator.trim() === "" ||
-      typeof number !== "number" ||
-      number < 0
-    ) {
-      throw new Error(
-        "First argument must be an operator (<,>,=) of type string. Second argument must be of type number and positive."
-      );
-    } else return compare();
-  }
-  return clientWidth;
+  // return
+  if (operator && number) {
+    return !disable ? compareOperators[operator]() : undefined;
+  } else return disable ? undefined : clientWidth;
 }
