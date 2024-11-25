@@ -5,53 +5,46 @@ import Link from "next/link";
 
 export default function PageContent({content, src, alt, liststyle, padding}) {
     return(
-         <PageWrapper> 
+        <PageWrapper> 
             <StyledSection> 
             {src &&<StyledImage priority src={src} alt={alt} width={500} height={500}/>}
             {content && content.map((item, index) => (
                 <StyledArticle key={index}>
                     {item.title &&  <StyledH1>{item.title}</StyledH1>}
                     {item.subtitle && <StyledH2>{item.subtitle}</StyledH2>}
-       <p>{item.text}</p>
-        {item.quote &&  <StyledParagraph $italic>{item.quote}</StyledParagraph> }
-        <StyledParagraph>{item.author}</StyledParagraph>
-        {item.list && <StyledUl $liststyle={liststyle} $padding={padding}>{item.list.map((listItem, index) => <li key={index}>{listItem}</li>)}</StyledUl>}
-{item.href && <div>
-    <span>{item.span1}</span>
-<StyledLink href={item.href} target="_blank"><span>{item.span2}</span></StyledLink>
-{item.span3 && <span>{item.span3}</span>}
-{item.href2 && <StyledLink href={item.href2} target="_blank"><span>{item.span4}</span></StyledLink>}
-{item.span5 && <span>{item.span5}</span>}
-</div>}
+                    <p>{item.text}</p>
+                    {item.quote &&  <StyledParagraph $italic>{item.quote}</StyledParagraph> }
+                    <StyledParagraph>{item.author}</StyledParagraph>
+                    {item.list && <StyledUl $liststyle={liststyle} $padding={padding}>{item.list.map((listItem, index) => <li key={index}>{listItem}</li>)}</StyledUl>}
+                    {item.href && <div>
+                    <span>{item.span1}</span>
+                    <StyledLink href={item.href} target="_blank"><span>{item.span2}</span></StyledLink>
+                    {item.span3 && <span>{item.span3}</span>}
+                    {item.href2 && <StyledLink href={item.href2} target="_blank"><span>{item.span4}</span></StyledLink>}
+                    {item.span5 && <span>{item.span5}</span>}
+                    </div>}
 
-{item.orderedList && <StyledOl>
-    {item.orderedList.map((listItem, index) => <StyledOlItem key={index}>{listItem.title}<StyledDiv>
-        {listItem.text && <p>{listItem.text}</p>}
-        {listItem.text2 && <p>{listItem.text2}</p>}
-        {listItem.text3 && <p>{listItem.text3}</p>}
-        {listItem.text4 && <p>{listItem.text4}</p>}
-        {listItem.text5 && <p>{listItem.text5}</p>}
-        {listItem.text6 && <p>{listItem.text6}</p>}
-        {listItem.text7 && <p>{listItem.text7}</p>}
-        {listItem.text8 && <p>{listItem.text8}</p>}
-        {listItem.text9 && <p>{listItem.text9}</p>}
-        {listItem.innerList && <StyledInnerOl>{listItem.innerList.map((item, index) => <li key={index}>{item.title}<StyledDiv><p>{item.text}</p>
-      
-        {item.list && <StyledInsideInnerUl>{item.list.map((item, index) => <li key={index}>{item}</li>)}</StyledInsideInnerUl>}
-        {item.text2 && <p>{item.text2}</p>}
-        {item.text3 && <p>{item.text3}</p>}
-        {item.text4 && <p>{item.text4}</p>}
-        {item.text5 && <p>{item.text5}</p>}
-        </StyledDiv>
-        </li>)}</StyledInnerOl>}
-        {listItem.list && <StyledInnerUl>{listItem.list.map((item, index) => <li key={index}>{item}</li>)}</StyledInnerUl>}
-        </StyledDiv>
-        </StyledOlItem>)}
-    </StyledOl>}
+                    {item.orderedList && <StyledOl>
+                    {item.orderedList.map((listItem, index) => <li key={index}>{listItem.title}<StyledDiv>
+                    {listItem.text && <p>{listItem.text}</p>}
+                    {listItem.text2 && <p>{listItem.text2}</p>}
+                    {listItem.texts && <StyledInnerUl>{listItem.texts.map((item, index) => <p key={index}>{item}</p>)}</StyledInnerUl>}
 
+                    {listItem.innerList && <StyledInnerOl>{listItem.innerList.map((item, index) => <li key={index}>{item.title}<StyledDiv> 
+                        <p>{item.text}</p>
+                        {item.list && <StyledInsideInnerUl>{item.list.map((item, index) => <li key={index}>{item}</li>)}</StyledInsideInnerUl>}
+                        {item.text2 && <p>{item.text2}</p>}
+                        {item.texts && <StyledInnerUl>{item.texts.map((item, index) => <p key={index}>{item}</p>)}</StyledInnerUl>}
+                    </StyledDiv> 
+                    </li>)}</StyledInnerOl>}
+
+                    {listItem.list && <StyledInnerUl>{listItem.list.map((item, index) => <li key={index}>{item}</li>)}</StyledInnerUl>}
+                    </StyledDiv>
+                    </li>)}
+                    </StyledOl>}
                 </StyledArticle>
-            ))}
-        </StyledSection> 
+                ))}
+            </StyledSection> 
         </PageWrapper> 
             );
 }
@@ -126,14 +119,9 @@ gap: 2rem;
 margin-top: 1rem;
 `;
 
-const StyledOlItem = styled.li`
-
-`;
-
 const StyledDiv = styled.div`
 display: flex;
 flex-direction: column;
-gap: 1rem;
 margin-top: 1rem;
 `;
 

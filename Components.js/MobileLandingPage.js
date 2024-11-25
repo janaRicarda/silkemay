@@ -14,7 +14,7 @@ export default function MobileLandingPage() {
         </StyledArticle>
         <StyledArticle>
             <StyledLink $main href="/">SILKE MAY</StyledLink>
-            <StyledParagraph $mobile >KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE / BILDENDE KÜNSTLERIN</StyledParagraph>
+            <StyledParagraph>KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE / BILDENDE KÜNSTLERIN</StyledParagraph>
         </StyledArticle>
         <StyledArticle>
             <StyledLink href="/therapie">

@@ -2,7 +2,7 @@ import Head from "next/head";
 import { oilPainting } from "@/lib/data";
 import { oilPaintings } from "@/lib/gallery";
 import PageContent from "@/Components.js/PageContent";
-import GallerySection from "@/Components.js/Gallery";
+import GallerySection from "@/Components.js/GallerySection";
 
 export default function ÖlmalereiPage() {
     return(
