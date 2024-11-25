@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import MobileMenu from "./MobileMenu";
+import MobileNavigation from "./MobileNavigation";
 import { useEffect, useState } from "react";
 import Menu from "../public/menu.svg";
 import Link from "next/link";
@@ -26,7 +26,7 @@ export default function Header() {
         <StyledButton onClick={handleMenu}>
           <StyledMenu />
         </StyledButton>
-        {showMenu && <MobileMenu closeMenu={handleMenu} />}
+        {showMenu && <MobileNavigation closeMenu={handleMenu} />}
       </StyledHeader>
     </>
   );

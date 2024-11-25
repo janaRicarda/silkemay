@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export default function Infos({ handleMenu }) {
+export default function InfosMenu({ handleMenu }) {
   const linkList = [
     { name: "vita", href: "/vita" },
     { name: "kontakt", href: "/kontakt" },

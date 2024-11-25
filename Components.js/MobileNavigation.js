@@ -2,11 +2,11 @@ import styled from "styled-components";
 import Link from "next/link";
 import PaintingMenu from "./PaintingMenu";
 import TherapyMenu from "./TherapyMenu";
-import Infos from "./InfosMenu";
+import InfosMenu from "./InfosMenu";
 import { useState } from "react";
 import Close from "../public/close.svg";
 
-export default function MobileMenu({ closeMenu }) {
+export default function MobileNavigation({ closeMenu }) {
   const [showPainting, setShowPainting] = useState(false);
   const [showTherapy, setShowTherapy] = useState(false);
   const [showInfos, setShowInfos] = useState(false);
@@ -41,7 +41,7 @@ export default function MobileMenu({ closeMenu }) {
         </StyledMenuButton>
         {showTherapy && <TherapyMenu />}
         <StyledMenuButton onClick={handleShowInfos}>INFOS</StyledMenuButton>
-        {showInfos && <Infos />}
+        {showInfos && <InfosMenu />}
       </StyledNav>
       <StyledButton>
         <StyledClose onClick={closeMenu} />
