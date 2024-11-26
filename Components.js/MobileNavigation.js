@@ -1,54 +1,28 @@
 import styled from "styled-components";
 import Link from "next/link";
-import PaintingMenu from "./PaintingMenu";
-import TherapyMenu from "./TherapyMenu";
-import InfosMenu from "./InfosMenu";
-import { useState } from "react";
 import Close from "../public/close.svg";
+import MainNavigation from "./MainNavigation";
+import Footer from "./Footer";
 
 export default function MobileNavigation({ closeMenu }) {
-  const [showPainting, setShowPainting] = useState(false);
-  const [showTherapy, setShowTherapy] = useState(false);
-  const [showInfos, setShowInfos] = useState(false);
-
-  function handleShowPainting() {
-    setShowPainting(!showPainting);
-    setShowTherapy(false);
-    setShowInfos(false);
-  }
-
-  function handleShowTherapy() {
-    setShowTherapy(!showTherapy);
-    setShowPainting(false);
-    setShowInfos(false);
-  }
-
-  function handleShowInfos() {
-    setShowInfos(!showInfos);
-    setShowPainting(false);
-    setShowTherapy(false);
-  }
   return (
     <StyledSection>
-      <StyledNav>
-        <StyledLink href="/">STARTSEITE</StyledLink>
-        <StyledMenuButton onClick={handleShowPainting}>
-          MALEREI
-        </StyledMenuButton>
-        {showPainting && <PaintingMenu />}
-        <StyledMenuButton onClick={handleShowTherapy}>
-          THERAPIE
-        </StyledMenuButton>
-        {showTherapy && <TherapyMenu />}
-        <StyledMenuButton onClick={handleShowInfos}>INFOS</StyledMenuButton>
-        {showInfos && <InfosMenu />}
-      </StyledNav>
       <StyledButton>
         <StyledClose onClick={closeMenu} />
       </StyledButton>
+      <MainNavigation />
+      <StyledFooterWrapper>
+        <Footer brightFont={true} />
+      </StyledFooterWrapper>
     </StyledSection>
   );
 }
+
+const StyledFooterWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+`;
 
 const StyledSection = styled.section`
   width: 100%;

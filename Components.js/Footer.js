@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function Footer() {
+export default function Footer({ brightFont }) {
   const pathname = useRouter().pathname;
 
   const linkList = [
@@ -23,7 +23,11 @@ export default function Footer() {
     <StyledFooter>
       {linkList.map(({ name, href }, index) => {
         return (
-          <StyledLink key={index} href={href} $active={href === pathname}>
+          <StyledLink
+            key={index}
+            href={href}
+            $brightFont={brightFont}
+            $active={href === pathname}>
             {name.toUpperCase()}
           </StyledLink>
         );
@@ -33,9 +37,6 @@ export default function Footer() {
 }
 
 const StyledFooter = styled.footer`
-  position: absolute;
-  bottom: 1rem;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,7 +46,8 @@ const StyledFooter = styled.footer`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: var(--light-font);
+  color: ${({ $brightFont }) =>
+    $brightFont ? `var(--light-font)` : `var(--dark-font)`};
   opacity: ${({ $active }) => ($active ? "1" : "0.5")};
   font-size: 0.8rem;
   &:hover {

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Link from "next/link";
-import Footer from "./Footer";
 
 export default function MobileLandingPage() {
   return (
@@ -22,7 +21,6 @@ export default function MobileLandingPage() {
           <StyledLink href="/therapie">THERAPIE</StyledLink>
         </StyledArticle>
       </StyledNav>
-      <Footer />
     </StyledNavSection>
   );
 }

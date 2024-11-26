@@ -12,7 +12,7 @@ const StyledSection = styled.section`
 width: auto;
 height: ${({$height}) => ($height ? "85vh" : "auto")};
 margin: 0 1rem 0 1rem;
-padding: 0 1rem 1rem 1rem;
+padding: 0 1rem 3rem 1rem;
 display: flex;
 flex-direction: column;
 justify-content: center;

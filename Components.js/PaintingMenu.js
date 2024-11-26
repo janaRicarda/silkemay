@@ -37,7 +37,7 @@ const StyledLinkWrapper = styled.article`
   font-size: 1.5rem;
   @media (min-width: 800px) {
     position: absolute;
-    top: 19%;
+    top: 23%;
     right: 5%;
   }
 `;
