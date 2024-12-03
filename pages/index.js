@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
 import MobileLandingPage from "@/Components.js/MobileLandingPage";
-import { useCallback } from "react";
 import useClientWidth from "@/hooks/useClientWidth";
 
 export default function Home() {

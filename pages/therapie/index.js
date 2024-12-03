@@ -1,7 +1,7 @@
 import Head from "next/head";
 import PageWrapper from "../../Components.js/Page";
 import styled from "styled-components";
-import Therapy from "@/Components.js/TherapyMenu";
+import TherapyMenu from "@/Components.js/TherapyMenu";
 
 export default function TherapyPage() {
     return(
@@ -25,7 +25,7 @@ export default function TherapyPage() {
         Mehr finden Sie auf dieser Website.
         </StyledParagraph>
         <StyledDiv>
-        <Therapy mobileIndexPage />
+        <TherapyMenu mobileIndexPage />
         </StyledDiv>
         </PageWrapper>
         </>
