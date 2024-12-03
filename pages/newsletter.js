@@ -28,9 +28,9 @@ export default function NewsletterPage() {
 
     return(
         <>
-         <Head>
-        <title>NEWSLETTER - SILKE MAY - KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE</title>
-        <meta name="description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
+        <Head>
+        <title>NEWSLETTER | Silke May | Kunsttherapeutin DGKT | Heilpraktikerin für Psychotherapie</title>
+        <meta name="description" content="Newsletter von Silke May - Kunsttherapeutin DGKT, Heilpraktikerin für Psychotherapie, bildende Künstlerin aus Bonn" />
         <meta name="keywords" content="MBSR, MBCT, Kunsttherapie, Bonn"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Silke May" />
@@ -40,7 +40,6 @@ export default function NewsletterPage() {
         <PageWrapper height>
         <StyledH1>NEWSLETTER</StyledH1>
         <StyledArticle>
-            
             <p>Wenn Sie meinen Newsletter erhalten möchten,
             tragen Sie sich bitte hier ein:</p>
             <StyledForm onSubmit={handleSubmit}>
@@ -57,6 +56,9 @@ export default function NewsletterPage() {
             </StyledForm>
             {message && <StyledDiv>{message}</StyledDiv>}
         </StyledArticle>
+        <StyledInfoArticle>
+        <p>Mit dem Klick auf Anmeldung, erklären Sie sich einverstanden, einen Einladungslink für den Newsletter zu erhalten. Solange Sie die Einladung nicht annehmen, wird Ihre Emailadresse nicht gespeichert.</p>
+        </StyledInfoArticle>
         </PageWrapper>
         </>
     );
@@ -116,4 +118,9 @@ position: absolute;
 top: 0;
 background: var(--background);
 color: var(--light-font);
+`;
+
+const StyledInfoArticle = styled.article`
+margin-top: 2rem;
+font-size: 0.7rem;
 `;

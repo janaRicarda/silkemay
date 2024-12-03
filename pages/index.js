@@ -10,15 +10,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>
-          HOME - SILKE MAY - KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR
-          PSYCHOTHERAPIE
-        </title>
-        <meta
-          name="description"
-          content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin"
-        />
-        <meta name="keywords" content="MBSR, MBCT, Kunsttherapie, Bonn" />
+        <title>HOME | Silke May | Kunsttherapeutin DGKT | Heilpraktikerin für Psychotherapie</title>
+        <meta name="description" content="Silke May - Kunsttherapeutin DGKT, Heilpraktikerin für Psychotherapie, bildende Künstlerin aus Bonn" />
+        <meta name="keywords" content="MBSR, MBCT, Kunsttherapie, Bonn"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Silke May" />
         <meta

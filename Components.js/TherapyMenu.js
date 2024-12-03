@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function TherapyMenu() {
+export default function TherapyMenu({mobileIndexPage}) {
   const pathname = useRouter().pathname;
 
   const linkList = [
@@ -18,10 +18,10 @@ export default function TherapyMenu() {
   ];
 
   return (
-    <StyledLinkWrapper>
+    <StyledLinkWrapper $alignment={mobileIndexPage}>
       {linkList.map(({ name, href }, index) => {
         return (
-          <StyledLink key={index} href={href} $active={href === pathname}>
+          <StyledLink key={index} href={href} $active={href === pathname} $darkfont={mobileIndexPage}>
             {name.toUpperCase()}
           </StyledLink>
         );
@@ -31,24 +31,21 @@ export default function TherapyMenu() {
 }
 
 const StyledLinkWrapper = styled.article`
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  font-size: 1.5rem;
-  @media (min-width: 800px) {
-    position: absolute;
-    bottom: 15%;
-    right: 5%;
-  }
+height: auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-end;
+font-size: 1.5rem;
+align-items: ${({$alignment}) => ($alignment ? "flex-start" : "flex-end")};
+font-size: ${({$alignment}) => ($alignment ? "1.2rem" : "1.5rem")};
 `;
 
 const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: var(--light-font);
-  opacity: ${({ $active }) => ($active ? "1" : "0.5")};
-  &:hover {
-    opacity: 1;
-  }
+text-decoration: none;
+color: ${({$darkfont}) => ($darkfont ? "var(--dark-font)" : "var(--light-font)")};
+opacity: ${({$active}) => ($active ? "1" : "0.5")};
+&:hover {
+opacity: 1;
+}
 `;
