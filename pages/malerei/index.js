@@ -1,7 +1,7 @@
 import Head from "next/head";
 import PageWrapper from "../../Components.js/Page";
 import styled from "styled-components";
-import Painting from "@/Components.js/PaintingMenu";
+import PaintingMenu from "@/Components.js/PaintingMenu";
 
 export default function PaintingPage() {
     return(
@@ -25,7 +25,7 @@ export default function PaintingPage() {
         Eine Auswahl meiner Arbeiten finden Sie auf dieser Website.
        </StyledParagraph>
        <StyledDiv>
-       <Painting mobileIndexPage/>
+       <PaintingMenu mobileIndexPage/>
        </StyledDiv>
         </PageWrapper>
         </>

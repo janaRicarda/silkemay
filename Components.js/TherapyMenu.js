@@ -2,27 +2,32 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function Therapy({handleMenu, mobileIndexPage}) {
+export default function TherapyMenu({mobileIndexPage}) {
+  const pathname = useRouter().pathname;
 
-    const router = useRouter();
+  const linkList = [
+    { name: "kunsttherapie", href: "/therapie/kunsttherapie" },
+    { name: "beratung", href: "/therapie/beratung" },
+    { name: "kunstvermittlung", href: "/therapie/kunstvermittlung" },
+    {
+      name: "inklusive kunstprojekte",
+      href: "/therapie/inklusive-kunstprojekte",
+    },
+    { name: "mbsr", href: "/therapie/MBSR" },
+    { name: "allgemeines", href: "/therapie/allgemeines" },
+  ];
 
-    const kunsttherapiePage = router.pathname === "/therapie/kunsttherapie";
-    const beratungPage = router.pathname === "/therapie/beratung";
-    const kunstvermittlungPage = router.pathname === "/therapie/kunstvermittlung";
-    const kunstprojektePage = router.pathname === "/therapie/inklusive-kunstprojekte";
-    const mbsrPage = router.pathname === "/therapie/MBSR";
-    const allgemeinesPage = router.pathname === "/therapie/allgemeines";
-
-return(
+  return (
     <StyledLinkWrapper $alignment={mobileIndexPage}>
-    <StyledLink $active={kunsttherapiePage} $darkfont={mobileIndexPage} href="/therapie/kunsttherapie" onClick={handleMenu}>KUNSTTHERAPIE</StyledLink>
-    <StyledLink $active={beratungPage} $darkfont={mobileIndexPage} href="/therapie/beratung" onClick={handleMenu}>BERATUNG</StyledLink>
-    <StyledLink $active={kunstvermittlungPage} $darkfont={mobileIndexPage} href="/therapie/kunstvermittlung" onClick={handleMenu}>KUNSTVERMITTLUNG</StyledLink>
-    <StyledLink $active={kunstprojektePage} $darkfont={mobileIndexPage} href="/therapie/inklusive-kunstprojekte" onClick={handleMenu}>INKLUSIVE KUNSTPROJEKTE</StyledLink>
-    <StyledLink $active={mbsrPage} $darkfont={mobileIndexPage} href="/therapie/MBSR" onClick={handleMenu}>MBSR</StyledLink>
-    <StyledLink $active={allgemeinesPage} $darkfont={mobileIndexPage} href="/therapie/allgemeines" onClick={handleMenu}>ALLGEMEINES</StyledLink>
+      {linkList.map(({ name, href }, index) => {
+        return (
+          <StyledLink key={index} href={href} $active={href === pathname} $darkfont={mobileIndexPage}>
+            {name.toUpperCase()}
+          </StyledLink>
+        );
+      })}
     </StyledLinkWrapper>
-);
+  );
 }
 
 const StyledLinkWrapper = styled.article`
@@ -30,6 +35,8 @@ height: auto;
 display: flex;
 flex-direction: column;
 justify-content: center;
+align-items: flex-end;
+font-size: 1.5rem;
 align-items: ${({$alignment}) => ($alignment ? "flex-start" : "flex-end")};
 font-size: ${({$alignment}) => ($alignment ? "1.2rem" : "1.5rem")};
 `;
