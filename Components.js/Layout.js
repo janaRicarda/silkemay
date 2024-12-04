@@ -8,6 +8,9 @@ import MainNavigation from "./MainNavigation";
 export default function Layout({ children }) {
   const router = useRouter();
   const indexPage = router.pathname === "/";
+  const paintingIndexPage = router.pathname === "/malerei";
+  const therapyIndexpage = router.pathname === "/therapie";
+  const newsletterPage = router.pathname === "/newsletter";
 
   const isDesktop = useClientWidth({ operator: ">", number: 800 });
   const isMobile = !isDesktop;
@@ -31,7 +34,7 @@ export default function Layout({ children }) {
         )}
         {children}
         {isMobile && (
-          <FooterWrapper>
+          <FooterWrapper $position={indexPage | paintingIndexPage | therapyIndexpage | newsletterPage}>
             <Footer brightFont={indexPage ? true : false} />
           </FooterWrapper>
         )}
@@ -48,8 +51,11 @@ const PageWrapper = styled.div`
 
 const FooterWrapper = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: ${({$position}) => ($position ? "0" : "-3rem")};
   width: 100%;
+  @media (min-width: 800px) {
+  bottom: 0;
+  }
 `;
 
 const StyledNavSection = styled.section`

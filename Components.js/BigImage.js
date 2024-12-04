@@ -3,6 +3,7 @@ import Image from "next/image";
 import Prev from "../public/chevron-left.svg";
 import Next from "../public/chevron-right.svg";
 import { useEffect, useRef } from "react";
+import PageTransition from "./PageTransition";
 
 export default function BigImage({
   handleShow,
@@ -46,6 +47,7 @@ export default function BigImage({
           aria-label="previous image"
           onClick={() => handlePainting("previous")}
         />
+         <PageTransition>
         <StyledArticle>
           <StyledImage src={src} alt={title} />
           <StyledOuterWrapper>
@@ -60,6 +62,7 @@ export default function BigImage({
             <StyledButton onClick={handleShow}>close</StyledButton>
           </StyledOuterWrapper>
         </StyledArticle>
+        </PageTransition>
         <StyledNext
           tabIndex={0}
           onKeyDown={(event) => {
@@ -97,19 +100,13 @@ const StyledSection = styled.section`
 `;
 
 const StyledArticle = styled.article`
-  width: 90vw;
+  width: 100%;
   height: auto;
   padding: 0.5rem;
   background: var(--light-background);
   display: flex;
   flex-direction: column;
   position: relative;
-  @media (min-width: 600px) {
-    width: 70vw;
-  }
-  @media (min-width: 1000px) {
-    width: 700px;
-  }
 `;
 
 const StyledImage = styled(Image)`
@@ -143,6 +140,11 @@ const StyledButton = styled.button`
   border: 0.5px solid var(--dark-font);
   color: var(--dark-font);
   padding: 0.5rem;
+  &:hover {
+  color: white;
+  background: var(--dark-font);
+  transition: all 300ms ease-in-out;
+  }
 `;
 
 const StyledPrev = styled(Prev)`
@@ -158,6 +160,7 @@ const StyledPrev = styled(Prev)`
   &:hover {
     transform: scale(1.5);
     opacity: 1;
+    transition: 300ms ease-in-out;
   }
 
   &:focus {
@@ -182,6 +185,7 @@ const StyledNext = styled(Next)`
   &:hover {
     transform: scale(1.5);
     opacity: 1;
+    transition: 300ms ease-in-out;
   }
 
   &:focus {

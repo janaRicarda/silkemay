@@ -40,7 +40,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem 0.5rem 2rem;
+  padding: 1rem 1.2rem 0.5rem 2rem;
   background: white;
   z-index: 1;
 `;
@@ -49,6 +49,11 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--dar-font);
   font-size: 2rem;
+  font-weight: 200;
+  &:hover {
+  transform: scale(1.05);
+  transition: 300ms ease-in-out;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -58,6 +63,11 @@ const StyledButton = styled.button`
 `;
 
 const StyledMenu = styled(Menu)`
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3.8rem;
+  height: 3.8rem;
+  cursor: pointer;
+  &:hover {
+transform: scale(1.2);
+ transition: 300ms ease-in-out;
+  }
 `;

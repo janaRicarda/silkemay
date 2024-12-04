@@ -65,6 +65,7 @@ const StyledListItem = styled.li`
   &:hover {
     background: ${({ $itemActive }) =>
       $itemActive ? "var(--dark-font)" : "var(--background)"};
+    transition: 300ms ease-in-out;
   }
 `;
 
@@ -73,7 +74,8 @@ const StyledButton = styled.button`
   background: transparent;
   cursor: pointer;
   &:hover {
-    transform: scale(1.5);
+    transform: scale(1.1);
+    transition: 300ms ease-in-out;
   }
 `;
 

@@ -76,7 +76,7 @@ export default function GallerySection({ paintings, title, id }) {
 const StyledSection = styled.section`
   width: 100%;
   height: auto;
-  padding: 0 3rem 0 2rem;
+  padding: 0 2rem 0 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,6 +118,10 @@ const StyledButton = styled(motion.button)`
   padding: 0;
   width: inherit;
   height: inherit;
+  &:hover {
+  transform: scale(1.05);
+  transition: 300ms ease-in-out;
+  }
 `;
 
 const StyledImage = styled(Image)`

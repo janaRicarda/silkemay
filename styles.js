@@ -20,18 +20,24 @@ export default createGlobalStyle`
   body {
   background: var(--light-background);
   color: var(--dark-font);
-  font-weight: 100;
+  font-weight: 150;
   font-family: system-ui;
+  font-size: 1rem;
 
+   @media (min-width: 600px) {
+   font-size: 1.1rem;
+   }
  @media (min-width: 800px) {
  margin-left: 400px;
  font-size: 1.1rem;
  }
  @media (min-width: 1000px) {
  margin-left: 450px;
+ font-size: 1.2rem;
  }
  @media (min-width: 1200px) {
  margin-left: 500px;
+ fonst-size: 1.3rem;
  }
   }
 

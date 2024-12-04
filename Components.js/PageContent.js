@@ -3,7 +3,7 @@ import PageWrapper from "./Page";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function PageContent({ content, src, alt, liststyle, padding }) {
+export default function PageContent({ content, src, alt, liststyle, padding}) {
   return (
     <PageWrapper>
       <StyledSection>
@@ -138,13 +138,13 @@ const StyledArticle = styled.article`
 const StyledH1 = styled.h1`
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 2rem;
 `;
 
 const StyledH2 = styled.h2`
   font-size: 1.2rem;
-  font-weight: 100;
+  font-weight: 300;
   margin-bottom: 0.2rem;
 `;
 
@@ -159,6 +159,7 @@ const StyledLink = styled(Link)`
   color: var(--link);
   &:hover {
     color: var(--background);
+    transition: 300ms ease-in-out;
   }
 `;
 

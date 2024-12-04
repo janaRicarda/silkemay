@@ -2,6 +2,7 @@ import Head from "next/head";
 import { artTherapy } from "@/lib/data";
 import Kunsttherapie from "../../public/images/kunsttherapie.png";
 import PageContent from "@/Components.js/PageContent";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function KunsttherapiePage() {
     return(
@@ -15,7 +16,9 @@ export default function KunsttherapiePage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
+      <PageTransition>
     <PageContent content={artTherapy} src={Kunsttherapie} alt={"Malutensilien"}/>
+    </PageTransition>
 </>
     );
 }
