@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Link from "next/link";
 import Close from "../public/close.svg";
 import MainNavigation from "./MainNavigation";
 import Footer from "./Footer";
@@ -25,6 +24,7 @@ const StyledFooterWrapper = styled.div`
 `;
 
 const StyledSection = styled.section`
+ border: 1px solid white;
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -40,29 +40,6 @@ const StyledSection = styled.section`
   }
 `;
 
-const StyledNav = styled.nav`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  padding-right: 3rem;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  font-size: 2.5rem;
-  color: var(--light-font);
-`;
-
-const StyledMenuButton = styled.button`
-  border-style: none;
-  background: transparent;
-  font-size: 2.5rem;
-  padding: 0;
-  color: var(--light-font);
-`;
-
 const StyledButton = styled.button`
   background: transparent;
   border-style: none;
@@ -74,7 +51,12 @@ const StyledButton = styled.button`
 `;
 
 const StyledClose = styled(Close)`
-  width: 3rem;
-  height: 3rem;
+  width: 3.8rem;
+  height: 3.8rem;
   fill: var(--light-font);
+  cursor: pointer;
+  &:hover {
+  transform: scale(1.2);
+  transition: 300ms ease-in-out;
+  }
 `;

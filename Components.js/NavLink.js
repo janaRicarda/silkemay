@@ -24,6 +24,7 @@ const StyledLink = styled(Link)`
   opacity: ${({ $main }) => ($main ? "1" : "0.5")};
   &:hover {
     opacity: 1;
+    transition: 300ms ease-in-out;
   }
   &:focus {
     opacity: 1;
@@ -31,6 +32,7 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledMenuButton = styled.button`
+cursor: pointer;
   border-style: none;
   background: transparent;
   font-size: 2.5rem;

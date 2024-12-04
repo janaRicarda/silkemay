@@ -143,6 +143,11 @@ const StyledButton = styled.button`
   border: 0.5px solid var(--dark-font);
   color: var(--dark-font);
   padding: 0.5rem;
+  &:hover {
+  color: white;
+  background: var(--dark-font);
+  transition: all 300ms ease-in-out;
+  }
 `;
 
 const StyledPrev = styled(Prev)`
@@ -158,6 +163,7 @@ const StyledPrev = styled(Prev)`
   &:hover {
     transform: scale(1.5);
     opacity: 1;
+    transition: 300ms ease-in-out;
   }
 
   &:focus {
@@ -182,6 +188,7 @@ const StyledNext = styled(Next)`
   &:hover {
     transform: scale(1.5);
     opacity: 1;
+    transition: 300ms ease-in-out;
   }
 
   &:focus {

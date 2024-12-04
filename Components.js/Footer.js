@@ -38,10 +38,9 @@ export default function Footer({ brightFont }) {
 
 const StyledFooter = styled.footer`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 1rem;
-  gap: 0.2rem;
 `;
 
 const StyledLink = styled(Link)`
@@ -52,5 +51,7 @@ const StyledLink = styled(Link)`
   font-size: 0.8rem;
   &:hover {
     opacity: 1;
+    transform: scale(1.1);
+    transition: 300ms ease-in-out;
   }
 `;

@@ -105,6 +105,7 @@ padding: 1rem;
 cursor: pointer;
 &:hover {
 opacity: 1;
+transition: 300ms ease-in-out;
 }
 `;
 

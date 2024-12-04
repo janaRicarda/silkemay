@@ -2,8 +2,11 @@ import Head from "next/head";
 import PageWrapper from "../../Components.js/Page";
 import styled from "styled-components";
 import PaintingMenu from "@/Components.js/PaintingMenu";
+import useClientWidth from "@/hooks/useClientWidth";
 
 export default function PaintingPage() {
+  const isMobile = useClientWidth({ operator: "<=", number: 800 });
+
     return(
         <>
         <Head>
@@ -15,18 +18,22 @@ export default function PaintingPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
-        <PageWrapper height gap={"2rem"}>
+        <PageWrapper mobileIndexPage height gap={"2rem"}>
           <StyledArticle> 
        <StyledParagraph $quote>&quot;Kunst ist Magie, befreit von der Lüge, Wahrheit zu sein.&quot;</StyledParagraph>
        <StyledParagraph $accent>Theodor W. Adorno</StyledParagraph>
        </StyledArticle> 
        <StyledParagraph>In der Malerei interessieren mich Strukturen, Überlagerungen, Widersprüchlichkeiten, Verdichtungen, Zusammenhänge und das Spiel zwischen transparenten und dichten Flächen.</StyledParagraph>
+      {isMobile && (
+        <>
+            <StyledDiv>
        <StyledParagraph>
-        Eine Auswahl meiner Arbeiten finden Sie auf dieser Website.
+        Eine Auswahl meiner Arbeiten finden Sie hier:
        </StyledParagraph>
-       <StyledDiv>
        <PaintingMenu mobileIndexPage/>
        </StyledDiv>
+        </>
+      )}
         </PageWrapper>
         </>
     );
@@ -37,21 +44,20 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
-margin-left: 5rem;
+margin-left: 30%;
 `;
 
 const StyledParagraph = styled.p`
 font-style: ${({$quote}) => ($quote ? "italic" : "none")};
-font-size: ${({$quote}) => ($quote ? "1.3rem" : "1.1rem")};
 color: ${({$accent}) => ($accent ? "var(--background)" : "var(--dark-font)")}; 
 text-align: ${({$quote}) => ($quote ? "justify" : "left")};
+hyphens: auto;
 `;
 
 const StyledDiv = styled.div`
 display: flex;
-@media (min-width: 800px) {
-display: none;
-}
+flex-direction: column;
+gap: 1rem;
 `;
 
 

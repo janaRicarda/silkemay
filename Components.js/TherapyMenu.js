@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Arrow from "../public/arrow-right.svg";
 
 export default function TherapyMenu({mobileIndexPage}) {
   const pathname = useRouter().pathname;
@@ -22,6 +23,7 @@ export default function TherapyMenu({mobileIndexPage}) {
       {linkList.map(({ name, href }, index) => {
         return (
           <StyledLink key={index} href={href} $active={href === pathname} $darkfont={mobileIndexPage}>
+              {mobileIndexPage && <StyledArrow/> }
             {name.toUpperCase()}
           </StyledLink>
         );
@@ -36,6 +38,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
+margin-right: 2rem;
 font-size: 1.5rem;
 align-items: ${({$alignment}) => ($alignment ? "flex-start" : "flex-end")};
 font-size: ${({$alignment}) => ($alignment ? "1.2rem" : "1.5rem")};
@@ -47,5 +50,13 @@ color: ${({$darkfont}) => ($darkfont ? "var(--dark-font)" : "var(--light-font)")
 opacity: ${({$active}) => ($active ? "1" : "0.5")};
 &:hover {
 opacity: 1;
+transition: 300ms ease-in-out;
 }
+`;
+
+const StyledArrow = styled(Arrow)`
+width: 1rem;
+height: 1rem;
+display: inline-block;
+margin-right: 0.5rem;
 `;

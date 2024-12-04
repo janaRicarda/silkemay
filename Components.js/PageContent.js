@@ -159,6 +159,7 @@ const StyledLink = styled(Link)`
   color: var(--link);
   &:hover {
     color: var(--background);
+    transition: 300ms ease-in-out;
   }
 `;
 

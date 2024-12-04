@@ -118,6 +118,10 @@ const StyledButton = styled(motion.button)`
   padding: 0;
   width: inherit;
   height: inherit;
+  &:hover {
+  transform: scale(1.05);
+  transition: 300ms ease-in-out;
+  }
 `;
 
 const StyledImage = styled(Image)`
