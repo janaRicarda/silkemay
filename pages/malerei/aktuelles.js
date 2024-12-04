@@ -14,7 +14,7 @@ export default function AktuellesPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
-            <PageContent content={news}/>
+            <PageContent content={news} />
         </>
     )
 }

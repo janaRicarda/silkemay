@@ -97,19 +97,13 @@ const StyledSection = styled.section`
 `;
 
 const StyledArticle = styled.article`
-  width: 90vw;
+  width: 100%;
   height: auto;
   padding: 0.5rem;
   background: var(--light-background);
   display: flex;
   flex-direction: column;
   position: relative;
-  @media (min-width: 600px) {
-    width: 70vw;
-  }
-  @media (min-width: 1000px) {
-    width: 700px;
-  }
 `;
 
 const StyledImage = styled(Image)`

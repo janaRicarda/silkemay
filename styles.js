@@ -20,7 +20,7 @@ export default createGlobalStyle`
   body {
   background: var(--light-background);
   color: var(--dark-font);
-  font-weight: 100;
+  font-weight: 150;
   font-family: system-ui;
   font-size: 1rem;
 

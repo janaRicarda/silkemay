@@ -40,7 +40,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem 0.5rem 2rem;
+  padding: 1rem 1.2rem 0.5rem 2rem;
   background: white;
   z-index: 1;
 `;

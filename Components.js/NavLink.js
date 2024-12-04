@@ -38,4 +38,8 @@ cursor: pointer;
   font-size: 2.5rem;
   padding: 0;
   color: var(--light-font);
+  &:hover {
+  transform: scale(1.05);
+  transition: 300ms ease-in-out;
+  }
 `;
