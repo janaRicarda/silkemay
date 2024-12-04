@@ -5,6 +5,7 @@ import PageContent from "@/Components.js/PageContent";
 import Image from "next/image";
 import Logo from "../../public/images/MBSR-logo.png";
 import styled from "styled-components";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function MBSRPage() {
     return(
@@ -18,10 +19,12 @@ export default function MBSRPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
+      <PageTransition>
     <PageContent content={mbsr} src={Mbsr} alt={"Steinkreis"}/>
     <StyledDiv>
     <StyledImage src={Logo} alt="MBSR Logo" width={500} height={500} />
     </StyledDiv>
+    </PageTransition>
 </>
     );
 }

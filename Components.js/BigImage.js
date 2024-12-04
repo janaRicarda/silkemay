@@ -3,6 +3,7 @@ import Image from "next/image";
 import Prev from "../public/chevron-left.svg";
 import Next from "../public/chevron-right.svg";
 import { useEffect, useRef } from "react";
+import PageTransition from "./PageTransition";
 
 export default function BigImage({
   handleShow,
@@ -46,6 +47,7 @@ export default function BigImage({
           aria-label="previous image"
           onClick={() => handlePainting("previous")}
         />
+         <PageTransition>
         <StyledArticle>
           <StyledImage src={src} alt={title} />
           <StyledOuterWrapper>
@@ -60,6 +62,7 @@ export default function BigImage({
             <StyledButton onClick={handleShow}>close</StyledButton>
           </StyledOuterWrapper>
         </StyledArticle>
+        </PageTransition>
         <StyledNext
           tabIndex={0}
           onKeyDown={(event) => {

@@ -6,6 +6,7 @@ import { useState } from "react";
 import PaginationNav from "@/Components.js/PaginationNav";
 import { paginate } from "@/utils/paginate";
 import GallerySection from "@/Components.js/GallerySection";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function PapiermalereiPage() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,6 +51,7 @@ export default function PapiermalereiPage() {
         />
         <meta property="og:type" content="website" />
       </Head>
+      <PageTransition>
       <PageContent content={paperPainting} />
       <GallerySection paintings={slicedItems} id={currentPage} />
       <PaginationNav
@@ -57,6 +59,7 @@ export default function PapiermalereiPage() {
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
+      </PageTransition>
     </>
   );
 }

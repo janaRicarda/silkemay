@@ -3,6 +3,7 @@ import PageWrapper from "../../Components.js/Page";
 import styled from "styled-components";
 import TherapyMenu from "@/Components.js/TherapyMenu";
 import useClientWidth from "@/hooks/useClientWidth";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function TherapyPage() {
   const isMobile = useClientWidth({ operator: "<=", number: 800 });
@@ -18,6 +19,7 @@ export default function TherapyPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
+      <PageTransition>
         <PageWrapper mobileIndexPage height gap={"2rem"}>
         <StyledArticle> 
         <StyledParagraph $quote>&quot;Wenn die Achtsamkeit etwas Schönes berührt, offenbart sich dessen Schönheit. Wenn sie etwas Schmerzvolles berührt, wandelt sie es um und heilt es.&quot;</StyledParagraph>
@@ -35,6 +37,7 @@ export default function TherapyPage() {
         </>
       )}
         </PageWrapper>
+        </PageTransition>
         </>
     );
 }

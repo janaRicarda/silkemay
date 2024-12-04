@@ -2,6 +2,7 @@ import Head from "next/head";
 import { artMediation } from "@/lib/data";
 import Kunstvermittlung from "../../public/images/kunstvermittlung.png";
 import PageContent from "@/Components.js/PageContent";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function KunstvermittlungPage() {
     return(
@@ -15,7 +16,9 @@ export default function KunstvermittlungPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
+      <PageTransition>
     <PageContent content={artMediation} src={Kunstvermittlung} alt={"Menschen sitzen auf Stühlen in einem Halbkreis"}/>
+    </PageTransition>
 </>
     );
 }

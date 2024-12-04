@@ -3,6 +3,7 @@ import PageWrapper from "../../Components.js/Page";
 import styled from "styled-components";
 import PaintingMenu from "@/Components.js/PaintingMenu";
 import useClientWidth from "@/hooks/useClientWidth";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function PaintingPage() {
   const isMobile = useClientWidth({ operator: "<=", number: 800 });
@@ -18,6 +19,7 @@ export default function PaintingPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
+   <PageTransition>
         <PageWrapper mobileIndexPage height gap={"2rem"}>
           <StyledArticle> 
        <StyledParagraph $quote>&quot;Kunst ist Magie, befreit von der Lüge, Wahrheit zu sein.&quot;</StyledParagraph>
@@ -35,6 +37,7 @@ export default function PaintingPage() {
         </>
       )}
         </PageWrapper>
+        </PageTransition>
         </>
     );
 }

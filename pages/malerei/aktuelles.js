@@ -1,6 +1,7 @@
 import Head from "next/head";
 import PageContent from "@/Components.js/PageContent";
 import { news } from "@/lib/data";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function AktuellesPage() {
     return(
@@ -14,7 +15,9 @@ export default function AktuellesPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
+      <PageTransition>
             <PageContent content={news} />
+            </PageTransition>
         </>
     )
 }

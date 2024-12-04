@@ -2,6 +2,7 @@ import Head from "next/head";
 import { consultation } from "@/lib/data";
 import Beratung from "../../public/images/beratung.png";
 import PageContent from "@/Components.js/PageContent";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function BeratungPage() {
     return(
@@ -15,7 +16,9 @@ export default function BeratungPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
+      <PageTransition>
 <PageContent content={consultation} src={Beratung} alt={"zwei Menschen im Gespräch vor einem Bild"}/>
+</PageTransition>
 </>
     );
 }

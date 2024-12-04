@@ -3,6 +3,7 @@ import { drawings } from "@/lib/data";
 import PageContent from "@/Components.js/PageContent";
 import GallerySection from "@/Components.js/GallerySection";
 import { drawingImages } from "@/lib/gallery";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function ZeichnenPage() {
     return(
@@ -16,10 +17,12 @@ export default function ZeichnenPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
+      <PageTransition>
         <PageContent content={drawings}/>
         {drawingImages.map((item, index) => (
           <GallerySection key={index} paintings={item} title={item[0].name}/>
         ))}
+        </PageTransition>
         </>
     )
 }

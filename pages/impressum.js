@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { imprint } from "@/lib/data";
 import PageContent from "@/Components.js/PageContent";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function ImpressumPage() {
     return(
@@ -14,7 +15,9 @@ export default function ImpressumPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
         </Head>
+        <PageTransition>
         <PageContent content={imprint} liststyle={"none"} padding={"0"}/>
+        </PageTransition>
         </>
     );
 }

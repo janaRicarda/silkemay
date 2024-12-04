@@ -3,6 +3,7 @@ import { oilPainting } from "@/lib/data";
 import { oilPaintings } from "@/lib/gallery";
 import PageContent from "@/Components.js/PageContent";
 import GallerySection from "@/Components.js/GallerySection";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function ÖlmalereiPage() {
     return(
@@ -16,8 +17,10 @@ export default function ÖlmalereiPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
+      <PageTransition>
         <PageContent content={oilPainting}/>
         <GallerySection paintings={oilPaintings}/>
+        </PageTransition>
         </>
     )
 }

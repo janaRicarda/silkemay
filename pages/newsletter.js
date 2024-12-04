@@ -2,6 +2,7 @@ import Head from "next/head";
 import PageWrapper from "../Components.js/Page";
 import styled, {keyframes} from "styled-components";
 import { useState } from "react";
+import PageTransition from "@/Components.js/PageTransition";
 
 export default function NewsletterPage() {
     const [email, setEmail] = useState("");
@@ -37,6 +38,7 @@ export default function NewsletterPage() {
         <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
         <meta property="og:type" content="website" />
       </Head>
+      <PageTransition>
         <PageWrapper height>
         <StyledH1>NEWSLETTER</StyledH1>
         <StyledArticle>
@@ -60,6 +62,7 @@ export default function NewsletterPage() {
         <p>Mit dem Klick auf Anmeldung, erklären Sie sich einverstanden, einen Einladungslink für den Newsletter zu erhalten. Solange Sie die Einladung nicht annehmen, wird Ihre Emailadresse nicht gespeichert.</p>
         </StyledInfoArticle>
         </PageWrapper>
+        </PageTransition>
         </>
     );
 }
