@@ -80,10 +80,11 @@ export default function BigImage({
 }
 
 const StyledDialog = styled.dialog`
-border: 1px solid red;
   display: flex;
   width: 100vw;
   height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   background: transparent;
   justify-content: center;
   align-items: center;
