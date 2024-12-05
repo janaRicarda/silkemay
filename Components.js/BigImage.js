@@ -80,6 +80,7 @@ export default function BigImage({
 }
 
 const StyledDialog = styled.dialog`
+border: 1px solid red;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -89,6 +90,8 @@ const StyledDialog = styled.dialog`
   align-self: center;
   justify-self: center;
   border: none;
+  background-attachment: fixed;
+  overflow: hidden;
   &&::backdrop {
     background: rgba(0, 0, 0, 0.8);
   }
@@ -141,7 +144,7 @@ const StyledParagraph = styled.p`
 
 const StyledButton = styled.button`
   cursor: pointer;
-  //align-self: flex-end;
+  align-self: flex-end;
   background: transparent;
   //border: 0.5px solid var(--dark-font);
   border: none;
