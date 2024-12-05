@@ -129,6 +129,11 @@ const StyledArticle = styled.article`
 const StyledImage = styled(Image)`
   width: 100%;
   height: auto;
+    @media (max-height: 500px) and (max-width: 1000px) {
+    opject-fit: contain;
+    height: 100%;
+    width: auto;
+    }
 `;
 
 const StyledWrapper = styled.div`
