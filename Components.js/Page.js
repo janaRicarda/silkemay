@@ -17,7 +17,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 gap: ${({$gap}) => $gap};
-@media (orientation: landscape) and (max-width: 800px) {
+@media (max-height: 500px) and (max-width: 1000px) {
 height: ${({$height}) => ($height ? "100%" : "auto")};
 padding: 1rem 1rem 4rem 1rem;
 }
