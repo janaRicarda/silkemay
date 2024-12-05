@@ -4,6 +4,7 @@ import Prev from "../public/chevron-left.svg";
 import Next from "../public/chevron-right.svg";
 import { useEffect, useRef } from "react";
 import PageTransition from "./PageTransition";
+import Close from "../public/close-black.svg";
 
 export default function BigImage({
   handleShow,
@@ -36,6 +37,7 @@ export default function BigImage({
 
   return (
     <StyledDialog ref={dialogRef}>
+        <PageTransition>
       <StyledSection>
         <StyledPrev
           tabIndex={0}
@@ -47,7 +49,6 @@ export default function BigImage({
           aria-label="previous image"
           onClick={() => handlePainting("previous")}
         />
-         <PageTransition>
         <StyledArticle>
           <StyledImage src={src} alt={title} />
           <StyledOuterWrapper>
@@ -59,10 +60,9 @@ export default function BigImage({
                 Bild {index} von {length}
               </p>
             </StyledInnerWrapper>
-            <StyledButton onClick={handleShow}>close</StyledButton>
+            <StyledButton onClick={handleShow}><StyledClose/></StyledButton>
           </StyledOuterWrapper>
         </StyledArticle>
-        </PageTransition>
         <StyledNext
           tabIndex={0}
           onKeyDown={(event) => {
@@ -74,6 +74,7 @@ export default function BigImage({
           onClick={() => handlePainting("next")}
         />
       </StyledSection>
+      </PageTransition>
     </StyledDialog>
   );
 }
@@ -97,6 +98,10 @@ const StyledSection = styled.section`
   display: flex;
   justify-items: center;
   align-items: center;
+  width: 100vw;
+  @media (min-width: 800px) {
+  width: auto;
+  }
 `;
 
 const StyledArticle = styled.article`
@@ -136,14 +141,18 @@ const StyledParagraph = styled.p`
 
 const StyledButton = styled.button`
   cursor: pointer;
-  align-self: flex-end;
+  //align-self: flex-end;
   background: transparent;
-  border: 0.5px solid var(--dark-font);
-  color: var(--dark-font);
-  padding: 0.5rem;
+  //border: 0.5px solid var(--dark-font);
+  border: none;
+  //color: var(--dark-font);
+  //padding: 0.5rem;
+  opacity: 0.5;
   &:hover {
-  color: white;
-  background: var(--dark-font);
+  //color: white;
+  //background: var(--dark-font);
+  opacity: 1;
+  transform: scale(1.2);
   transition: all 300ms ease-in-out;
   }
 `;
@@ -188,4 +197,9 @@ const StyledNext = styled(Next)`
   &:focus-visible {
     outline: -webkit-focus-ring-color auto 1px;
   }
+`;
+
+const StyledClose = styled(Close)`
+width: 2rem;
+height: 2rem;
 `;
