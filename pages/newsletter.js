@@ -39,7 +39,7 @@ export default function NewsletterPage() {
         <meta property="og:type" content="website" />
       </Head>
       <PageTransition>
-        <PageWrapper height>
+        <PageWrapper>
         <StyledH1>NEWSLETTER</StyledH1>
         <StyledArticle>
             <p>Wenn Sie meinen Newsletter erhalten möchten,
