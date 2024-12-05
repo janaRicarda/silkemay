@@ -98,9 +98,13 @@ const StyledDialog = styled.dialog`
 
 const StyledSection = styled.section`
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
   width: 100vw;
+    @media (max-height: 500px) and (max-width: 1000px) {
+    width: 100%;
+    height: 100%;
+    }
   @media (min-width: 800px) {
   width: auto;
   }
@@ -116,7 +120,7 @@ const StyledArticle = styled.article`
   position: relative;
   @media (max-height: 500px) and (max-width: 1000px) {
   flex-direction: row;
-  height: 90vh;
+  height: 90dvh;
   width: auto;
   gap: 0.5rem;
   }
