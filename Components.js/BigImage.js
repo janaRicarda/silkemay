@@ -127,7 +127,7 @@ const StyledInnerWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-
+font-size: 0.8rem;
 `;
 
 const StyledParagraph = styled.p`
@@ -136,6 +136,7 @@ const StyledParagraph = styled.p`
 
 const StyledButton = styled.button`
   cursor: pointer;
+  align-self: flex-end;
   background: transparent;
   border: 0.5px solid var(--dark-font);
   color: var(--dark-font);
@@ -149,14 +150,10 @@ const StyledButton = styled.button`
 
 const StyledPrev = styled(Prev)`
   cursor: pointer;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   fill: var(--light-background);
   opacity: 0.6;
-  @media (min-width: 600px) {
-    width: 5rem;
-    height: 5rem;
-  }
   &:hover {
     transform: scale(1.5);
     opacity: 1;
@@ -174,14 +171,10 @@ const StyledPrev = styled(Prev)`
 
 const StyledNext = styled(Next)`
   cursor: pointer;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   fill: var(--light-background);
   opacity: 0.6;
-  @media (min-width: 600px) {
-    width: 5rem;
-    height: 5rem;
-  }
   &:hover {
     transform: scale(1.5);
     opacity: 1;

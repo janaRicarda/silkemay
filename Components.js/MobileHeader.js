@@ -8,6 +8,17 @@ import { useRouter } from "next/router";
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
 
+  useEffect(() => {
+    if (showMenu) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "auto";
+    }
+    return () => {
+        document.body.style.overflow = "auto";
+    };
+}, [showMenu]);
+
   function handleMenu() {
     setShowMenu(!showMenu);
   }
