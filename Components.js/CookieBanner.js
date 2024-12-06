@@ -14,7 +14,7 @@ export default function CookieBanner({ handleCookieBanner }) {
   };
 
   const transition = {
-    duration: 0.5,
+    duration: 0.35,
   };
 
   return (

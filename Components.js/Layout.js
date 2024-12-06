@@ -17,7 +17,9 @@ export default function Layout({ children }) {
     const banner = sessionStorage.getItem("cookieBanner_shown");
 
     if (!banner) {
-      setShowCookieBanner(true);
+      setTimeout(() => {
+        setShowCookieBanner(true);
+      }, 700);
       sessionStorage.setItem("cookieBanner_shown", "true");
     }
   }, []);
