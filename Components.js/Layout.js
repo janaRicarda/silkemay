@@ -5,8 +5,23 @@ import styled from "styled-components";
 import Footer from "./Footer";
 import MainNavigation from "./MainNavigation";
 import PageTransition from "./PageTransition";
+import { useEffect, useState } from "react";
+import CookieBanner from "./CookieBanner";
+import { AnimatePresence } from "framer-motion";
 
 export default function Layout({ children }) {
+  const [showCookieBanner, setShowCookieBanner] = useState(false);
+
+  //* checks session storage on initial render and renders cookieBanner conditionally
+  useEffect(() => {
+    const banner = sessionStorage.getItem("cookieBanner_shown");
+
+    if (!banner) {
+      setShowCookieBanner(true);
+      sessionStorage.setItem("cookieBanner_shown", "true");
+    }
+  }, []);
+
   const router = useRouter();
   const indexPage = router.pathname === "/";
   const paintingIndexPage = router.pathname === "/malerei";
@@ -16,9 +31,18 @@ export default function Layout({ children }) {
   const isDesktop = useClientWidth({ operator: ">", number: 800 });
   const isMobile = !isDesktop;
 
+  function handleCookieBanner() {
+    setShowCookieBanner(false);
+  }
+
   return (
     <>
       <PageWrapper>
+        <AnimatePresence>
+          {showCookieBanner && (
+            <CookieBanner handleCookieBanner={handleCookieBanner} />
+          )}
+        </AnimatePresence>
         {isDesktop ? (
           <StyledNavSection>
             <MainNavigation />
