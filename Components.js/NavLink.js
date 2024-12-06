@@ -38,6 +38,9 @@ cursor: pointer;
   font-size: 2.5rem;
   padding: 0;
   color: var(--light-font);
+   @media (max-height: 500px) and (max-width: 1000px) {
+   font-size: 1.5rem;
+    }
   &:hover {
   transform: scale(1.05);
   transition: 300ms ease-in-out;

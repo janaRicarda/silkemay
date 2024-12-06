@@ -48,7 +48,13 @@ const StyledLink = styled(Link)`
   color: ${({ $brightFont }) =>
     $brightFont ? `var(--light-font)` : `var(--dark-font)`};
   opacity: ${({ $active }) => ($active ? "1" : "0.5")};
+  font-size: 0.7rem;
+  @media (min-width: 600px) {
+  font-size: 1rem;
+  }
+  @media (min-width: 800px) {
   font-size: 0.8rem;
+  }
   &:hover {
     opacity: 1;
     transform: scale(1.1);

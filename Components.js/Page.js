@@ -17,6 +17,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 gap: ${({$gap}) => $gap};
+@media (max-height: 500px) and (max-width: 1000px) {
+height: ${({$height}) => ($height ? "100%" : "auto")};
+padding: 1rem 1rem 4rem 1rem;
+}
 @media (min-width: 800px) {
 height: ${({$height}) => ($height ? "100vh" : "auto")};
 margin: 1rem 1rem 0 1rem;

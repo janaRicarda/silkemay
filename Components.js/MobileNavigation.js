@@ -35,9 +35,6 @@ const StyledSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  @media (orientation: landscape) {
-    padding-right: 11rem;
-  }
 `;
 
 const StyledButton = styled.button`

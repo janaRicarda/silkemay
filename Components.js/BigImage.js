@@ -4,6 +4,7 @@ import Prev from "../public/chevron-left.svg";
 import Next from "../public/chevron-right.svg";
 import { useEffect, useRef } from "react";
 import PageTransition from "./PageTransition";
+import Close from "../public/close-black.svg";
 
 export default function BigImage({
   handleShow,
@@ -36,6 +37,7 @@ export default function BigImage({
 
   return (
     <StyledDialog ref={dialogRef}>
+        <PageTransition>
       <StyledSection>
         <StyledPrev
           tabIndex={0}
@@ -47,22 +49,18 @@ export default function BigImage({
           aria-label="previous image"
           onClick={() => handlePainting("previous")}
         />
-         <PageTransition>
         <StyledArticle>
           <StyledImage src={src} alt={title} />
-          <StyledOuterWrapper>
-            <StyledInnerWrapper>
+            <StyledWrapper>
               <StyledParagraph>{paintingToShow.title}</StyledParagraph>
               <p>{paintingToShow.material}</p>
               <p>{paintingToShow.size}</p>
               <p>
                 Bild {index} von {length}
               </p>
-            </StyledInnerWrapper>
-            <StyledButton onClick={handleShow}>close</StyledButton>
-          </StyledOuterWrapper>
+            </StyledWrapper>
+            <StyledButton onClick={handleShow}><StyledClose/></StyledButton>
         </StyledArticle>
-        </PageTransition>
         <StyledNext
           tabIndex={0}
           onKeyDown={(event) => {
@@ -74,6 +72,7 @@ export default function BigImage({
           onClick={() => handlePainting("next")}
         />
       </StyledSection>
+      </PageTransition>
     </StyledDialog>
   );
 }
@@ -82,12 +81,16 @@ const StyledDialog = styled.dialog`
   display: flex;
   width: 100vw;
   height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   background: transparent;
   justify-content: center;
   align-items: center;
   align-self: center;
   justify-self: center;
   border: none;
+  background-attachment: fixed;
+  overflow: hidden;
   &&::backdrop {
     background: rgba(0, 0, 0, 0.8);
   }
@@ -95,8 +98,16 @@ const StyledDialog = styled.dialog`
 
 const StyledSection = styled.section`
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
+  width: 100vw;
+    @media (max-height: 500px) and (max-width: 1000px) {
+    width: 100%;
+    height: 100%;
+    }
+  @media (min-width: 800px) {
+  width: auto;
+  }
 `;
 
 const StyledArticle = styled.article`
@@ -107,27 +118,36 @@ const StyledArticle = styled.article`
   display: flex;
   flex-direction: column;
   position: relative;
+  @media (max-height: 500px) and (max-width: 1000px) {
+  flex-direction: row;
+  height: 90dvh;
+  width: auto;
+  gap: 0.5rem;
+  }
 `;
 
 const StyledImage = styled(Image)`
   width: 100%;
   height: auto;
+    @media (max-height: 500px) and (max-width: 1000px) {
+    opject-fit: contain;
+    height: 100%;
+    width: auto;
+    }
 `;
 
-const StyledOuterWrapper = styled.div`
+const StyledWrapper = styled.div`
   margin-top: 0.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const StyledInnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-
+  font-size: 0.8rem;
+    @media (max-height: 500px) and (max-width: 1000px) {
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 0;
+  }
 `;
 
 const StyledParagraph = styled.p`
@@ -136,27 +156,31 @@ const StyledParagraph = styled.p`
 
 const StyledButton = styled.button`
   cursor: pointer;
+  //align-self: flex-end;
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0;
   background: transparent;
-  border: 0.5px solid var(--dark-font);
-  color: var(--dark-font);
-  padding: 0.5rem;
+  //border: 0.5px solid var(--dark-font);
+  border: none;
+  //color: var(--dark-font);
+  //padding: 0.5rem;
+  opacity: 0.5;
   &:hover {
-  color: white;
-  background: var(--dark-font);
+  //color: white;
+  //background: var(--dark-font);
+  opacity: 1;
+  transform: scale(1.2);
   transition: all 300ms ease-in-out;
   }
 `;
 
 const StyledPrev = styled(Prev)`
   cursor: pointer;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   fill: var(--light-background);
   opacity: 0.6;
-  @media (min-width: 600px) {
-    width: 5rem;
-    height: 5rem;
-  }
   &:hover {
     transform: scale(1.5);
     opacity: 1;
@@ -174,14 +198,10 @@ const StyledPrev = styled(Prev)`
 
 const StyledNext = styled(Next)`
   cursor: pointer;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   fill: var(--light-background);
   opacity: 0.6;
-  @media (min-width: 600px) {
-    width: 5rem;
-    height: 5rem;
-  }
   &:hover {
     transform: scale(1.5);
     opacity: 1;
@@ -196,3 +216,11 @@ const StyledNext = styled(Next)`
     outline: -webkit-focus-ring-color auto 1px;
   }
 `;
+
+const StyledClose = styled(Close)`
+width: 1.5rem;
+height: 1.5rem;
+@media (min-width: 600px) {
+width: 2rem;
+height: 2rem;
+}`;

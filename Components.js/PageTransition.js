@@ -22,4 +22,11 @@ export default function PageTransition({children}) {
     )
 }
 
-const StyledDiv = styled(motion.div)``;
+const StyledDiv = styled(motion.div)`
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BigImage from "./BigImage";
 import { motion } from "framer-motion";
 
@@ -12,6 +12,17 @@ export default function GallerySection({ paintings, title, id }) {
 
   const paintingsLength = paintings.length;
   const index = (currentImageIndex % paintingsLength) + 1;
+
+  useEffect(() => {
+    if (show) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "auto";
+    }
+    return () => {
+        document.body.style.overflow = "auto";
+    };
+}, [show]);
 
   function handleShow(index) {
     setShow(!show);
