@@ -4,20 +4,28 @@ import { news } from "@/lib/data";
 import PageTransition from "@/Components.js/PageTransition";
 
 export default function AktuellesPage() {
-    return(
-        <>
-        <Head>
-        <title>AKTUELLES - SILKE MAY - KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE</title>
-        <meta name="description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
-        <meta name="keywords" content="MBSR, MBCT, Kunsttherapie, Bonn"/>
+  return (
+    <>
+      <Head>
+        <title>
+          AKTUELLES - SILKE MAY - KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR
+          PSYCHOTHERAPIE
+        </title>
+        <meta
+          name="description"
+          content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin"
+        />
+        <meta name="keywords" content="MBSR, MBCT, Kunsttherapie, Bonn" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Silke May" />
-        <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
+        <meta
+          property="og:description"
+          content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin"
+        />
         <meta property="og:type" content="website" />
       </Head>
-      <PageTransition>
-            <PageContent content={news} />
-            </PageTransition>
-        </>
-    )
+
+      <PageContent content={news} />
+    </>
+  );
 }

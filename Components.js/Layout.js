@@ -4,6 +4,7 @@ import useClientWidth from "@/hooks/useClientWidth";
 import styled from "styled-components";
 import Footer from "./Footer";
 import MainNavigation from "./MainNavigation";
+import PageTransition from "./PageTransition";
 
 export default function Layout({ children }) {
   const router = useRouter();
@@ -32,9 +33,12 @@ export default function Layout({ children }) {
             </>
           )
         )}
-        {children}
+        <PageTransition>{children}</PageTransition>
         {isMobile && (
-          <FooterWrapper $position={indexPage | paintingIndexPage | therapyIndexpage | newsletterPage}>
+          <FooterWrapper
+            $position={
+              indexPage | paintingIndexPage | therapyIndexpage | newsletterPage
+            }>
             <Footer brightFont={indexPage ? true : false} />
           </FooterWrapper>
         )}
@@ -51,10 +55,10 @@ const PageWrapper = styled.div`
 
 const FooterWrapper = styled.div`
   position: absolute;
-  bottom: ${({$position}) => ($position ? "0" : "-3rem")};
+  bottom: ${({ $position }) => ($position ? "0" : "-3rem")};
   width: 100%;
   @media (min-width: 800px) {
-  bottom: 0;
+    bottom: 0;
   }
 `;
 
