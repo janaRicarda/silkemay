@@ -78,4 +78,7 @@ const StyledArticle = styled.article`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  @media (max-height: 400px) and (max-width: 700px) {
+  margin-right: 6rem;
+}
 `;
