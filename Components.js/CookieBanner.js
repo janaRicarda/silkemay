@@ -47,7 +47,7 @@ const StyledDiv = styled(motion.div)`
   background-color: ${({ $lightBackground }) =>
     $lightBackground ? "var(--light-background)" : "var(--background)"};
 
-  z-index: 10;
+  z-index: 1;
 
   display: flex;
   flex-direction: column;
