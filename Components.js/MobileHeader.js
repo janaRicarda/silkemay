@@ -10,14 +10,14 @@ export default function Header() {
 
   useEffect(() => {
     if (showMenu) {
-        document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
     } else {
-        document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     }
     return () => {
-        document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     };
-}, [showMenu]);
+  }, [showMenu]);
 
   function handleMenu() {
     setShowMenu(!showMenu);
@@ -53,7 +53,7 @@ const StyledHeader = styled.header`
   align-items: center;
   padding: 1rem 1.2rem 0.5rem 2rem;
   background: white;
-  z-index: 1;
+  z-index: 2;
 `;
 
 const StyledLink = styled(Link)`
@@ -62,8 +62,8 @@ const StyledLink = styled(Link)`
   font-size: 2rem;
   font-weight: 200;
   &:hover {
-  transform: scale(1.05);
-  transition: 300ms ease-in-out;
+    transform: scale(1.05);
+    transition: 300ms ease-in-out;
   }
 `;
 
@@ -78,7 +78,7 @@ const StyledMenu = styled(Menu)`
   height: 3.8rem;
   cursor: pointer;
   &:hover {
-transform: scale(1.2);
- transition: 300ms ease-in-out;
+    transform: scale(1.2);
+    transition: 300ms ease-in-out;
   }
 `;

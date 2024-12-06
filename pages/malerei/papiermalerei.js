@@ -51,7 +51,7 @@ export default function PapiermalereiPage() {
         />
         <meta property="og:type" content="website" />
       </Head>
-      <PageTransition>
+
       <PageContent content={paperPainting} />
       <GallerySection paintings={slicedItems} id={currentPage} />
       <PaginationNav
@@ -59,7 +59,6 @@ export default function PapiermalereiPage() {
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
-      </PageTransition>
     </>
   );
 }
