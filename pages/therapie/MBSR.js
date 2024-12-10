@@ -5,7 +5,6 @@ import PageContent from "@/Components.js/PageContent";
 import Image from "next/image";
 import Logo from "../../public/images/MBSR-logo.png";
 import styled from "styled-components";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function MBSRPage() {
   return (

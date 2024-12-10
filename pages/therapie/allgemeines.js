@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { generalInfos } from "@/lib/data";
 import PageContent from "@/Components.js/PageContent";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function AllgemeinesPage() {
   return (

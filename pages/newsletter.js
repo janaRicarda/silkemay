@@ -2,7 +2,6 @@ import Head from "next/head";
 import PageWrapper from "../Components.js/Page";
 import styled, { keyframes } from "styled-components";
 import { useState } from "react";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function NewsletterPage() {
   const [email, setEmail] = useState("");
@@ -18,7 +17,9 @@ export default function NewsletterPage() {
       },
       body: JSON.stringify({ email }),
     });
-    event.target.reset();
+
+    if (response.ok) setEmail("");
+
     const data = await response.json();
     setMessage(data.message);
     setTimeout(() => {

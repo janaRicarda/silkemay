@@ -2,11 +2,10 @@ import Head from "next/head";
 import { paperPainting } from "@/lib/data";
 import { pulpImages } from "@/lib/pulpgallery";
 import PageContent from "@/Components.js/PageContent";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PaginationNav from "@/Components.js/PaginationNav";
 import { paginate } from "@/utils/paginate";
 import GallerySection from "@/Components.js/GallerySection";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function PapiermalereiPage() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,6 +17,10 @@ export default function PapiermalereiPage() {
     { length: numberOfPages },
     (_, index) => index + 1
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   function handlePageChange(value) {
     if (value === "next") {

@@ -1,7 +1,6 @@
 import Head from "next/head";
 import PageContent from "@/Components.js/PageContent";
 import { news } from "@/lib/data";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function AktuellesPage() {
   return (

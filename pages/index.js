@@ -2,7 +2,6 @@ import Head from "next/head";
 import styled from "styled-components";
 import MobileLandingPage from "@/Components.js/MobileLandingPage";
 import useClientWidth from "@/hooks/useClientWidth";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function Home() {
   const isMobile = useClientWidth({ operator: "<=", number: 800 });

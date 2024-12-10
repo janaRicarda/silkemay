@@ -3,7 +3,6 @@ import { drawings } from "@/lib/data";
 import PageContent from "@/Components.js/PageContent";
 import GallerySection from "@/Components.js/GallerySection";
 import { drawingImages } from "@/lib/gallery";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function ZeichnenPage() {
   return (

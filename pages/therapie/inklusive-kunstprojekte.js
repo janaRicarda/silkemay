@@ -2,7 +2,6 @@ import Head from "next/head";
 import { inclusiveArtProjects } from "@/lib/data";
 import InklusiveProjekte from "../../public/images/inklusiveprojekte.png";
 import PageContent from "@/Components.js/PageContent";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function InklusiveKunstprojektePage() {
   return (

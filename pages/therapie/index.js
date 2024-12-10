@@ -3,7 +3,6 @@ import PageWrapper from "../../Components.js/Page";
 import styled from "styled-components";
 import TherapyMenu from "@/Components.js/TherapyMenu";
 import useClientWidth from "@/hooks/useClientWidth";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function TherapyPage() {
   const isMobile = useClientWidth({ operator: "<=", number: 800 });

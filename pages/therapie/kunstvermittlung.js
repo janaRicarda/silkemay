@@ -2,7 +2,6 @@ import Head from "next/head";
 import { artMediation } from "@/lib/data";
 import Kunstvermittlung from "../../public/images/kunstvermittlung.png";
 import PageContent from "@/Components.js/PageContent";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function KunstvermittlungPage() {
   return (

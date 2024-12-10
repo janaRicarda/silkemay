@@ -2,7 +2,6 @@ import Head from "next/head";
 import { vita } from "@/lib/data";
 import Portrait from "../public/images/portrait.png";
 import PageContent from "@/Components.js/PageContent";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function VitaPage() {
   return (

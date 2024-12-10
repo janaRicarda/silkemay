@@ -41,7 +41,7 @@ export default function CookieBanner({ handleCookieBanner }) {
 
 const StyledDiv = styled(motion.div)`
   position: fixed;
-  top: 70%;
+  top: 80%;
   right: 0;
 
   background-color: ${({ $lightBackground }) =>
@@ -56,13 +56,11 @@ const StyledDiv = styled(motion.div)`
   align-items: center;
 
   padding: 1rem;
-  border-radius: 1rem 0 0 1rem;
 `;
 
 const StyledParagraph = styled.p`
   color: ${({ $darkFont }) =>
     $darkFont ? "var(--dark-font)" : "var(--light-font)"};
-  font-weight: bolder;
   font-size: 0.8rem;
 
   @media (min-width: 600px) {
@@ -83,5 +81,4 @@ const StyledButton = styled.div`
   min-width: 70px;
 
   text-align: center;
-  font-weight: bolder;
 `;

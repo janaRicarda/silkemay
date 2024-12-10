@@ -3,7 +3,6 @@ import Image from "next/image";
 import Prev from "../public/chevron-left.svg";
 import Next from "../public/chevron-right.svg";
 import { useEffect, useRef } from "react";
-import PageTransition from "./PageTransition";
 import Close from "../public/close-black.svg";
 
 export default function BigImage({

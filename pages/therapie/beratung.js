@@ -2,7 +2,6 @@ import Head from "next/head";
 import { consultation } from "@/lib/data";
 import Beratung from "../../public/images/beratung.png";
 import PageContent from "@/Components.js/PageContent";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function BeratungPage() {
   return (
