@@ -4,8 +4,26 @@ import useClientWidth from "@/hooks/useClientWidth";
 import styled from "styled-components";
 import Footer from "./Footer";
 import MainNavigation from "./MainNavigation";
+import PageTransition from "./PageTransition";
+import { useEffect, useState } from "react";
+import CookieBanner from "./CookieBanner";
+import { AnimatePresence } from "framer-motion";
 
 export default function Layout({ children }) {
+  const [showCookieBanner, setShowCookieBanner] = useState(false);
+
+  //* checks session storage on initial render and renders cookieBanner conditionally
+  useEffect(() => {
+    const banner = sessionStorage.getItem("cookieBanner_shown");
+
+    if (!banner) {
+      setTimeout(() => {
+        setShowCookieBanner(true);
+      }, 700);
+      sessionStorage.setItem("cookieBanner_shown", "true");
+    }
+  }, []);
+
   const router = useRouter();
   const indexPage = router.pathname === "/";
   const paintingIndexPage = router.pathname === "/malerei";
@@ -15,9 +33,18 @@ export default function Layout({ children }) {
   const isDesktop = useClientWidth({ operator: ">", number: 800 });
   const isMobile = !isDesktop;
 
+  function handleCookieBanner() {
+    setShowCookieBanner(false);
+  }
+
   return (
     <>
       <PageWrapper>
+        <AnimatePresence>
+          {showCookieBanner && (
+            <CookieBanner handleCookieBanner={handleCookieBanner} />
+          )}
+        </AnimatePresence>
         {isDesktop ? (
           <StyledNavSection>
             <MainNavigation />
@@ -32,9 +59,12 @@ export default function Layout({ children }) {
             </>
           )
         )}
-        {children}
+        <PageTransition>{children}</PageTransition>
         {isMobile && (
-          <FooterWrapper $position={indexPage | paintingIndexPage | therapyIndexpage | newsletterPage}>
+          <FooterWrapper
+            $position={
+              indexPage | paintingIndexPage | therapyIndexpage | newsletterPage
+            }>
             <Footer brightFont={indexPage ? true : false} />
           </FooterWrapper>
         )}
@@ -51,10 +81,10 @@ const PageWrapper = styled.div`
 
 const FooterWrapper = styled.div`
   position: absolute;
-  bottom: ${({$position}) => ($position ? "0" : "-3rem")};
+  bottom: ${({ $position }) => ($position ? "0" : "-3rem")};
   width: 100%;
   @media (min-width: 800px) {
-  bottom: 0;
+    bottom: 0;
   }
 `;
 

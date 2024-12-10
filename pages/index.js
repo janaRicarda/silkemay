@@ -2,7 +2,6 @@ import Head from "next/head";
 import styled from "styled-components";
 import MobileLandingPage from "@/Components.js/MobileLandingPage";
 import useClientWidth from "@/hooks/useClientWidth";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function Home() {
   const isMobile = useClientWidth({ operator: "<=", number: 800 });
@@ -10,9 +9,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>HOME | Silke May | Kunsttherapeutin DGKT | Heilpraktikerin für Psychotherapie</title>
-        <meta name="description" content="Silke May - Kunsttherapeutin DGKT, Heilpraktikerin für Psychotherapie, bildende Künstlerin aus Bonn" />
-        <meta name="keywords" content="MBSR, MBCT, Kunsttherapie, Bonn"/>
+        <title>
+          HOME | Silke May | Kunsttherapeutin DGKT | Heilpraktikerin für
+          Psychotherapie
+        </title>
+        <meta
+          name="description"
+          content="Silke May - Kunsttherapeutin DGKT, Heilpraktikerin für Psychotherapie, bildende Künstlerin aus Bonn"
+        />
+        <meta name="keywords" content="MBSR, MBCT, Kunsttherapie, Bonn" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Silke May" />
         <meta
@@ -22,7 +27,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <PageTransition>
+
       {isMobile ? (
         <MobileLandingPage />
       ) : (
@@ -33,7 +38,6 @@ export default function Home() {
           </StyledParagraph>
         </StyledContentSection>
       )}
-      </PageTransition>
     </>
   );
 }

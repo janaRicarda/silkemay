@@ -5,38 +5,45 @@ import PageContent from "@/Components.js/PageContent";
 import Image from "next/image";
 import Logo from "../../public/images/MBSR-logo.png";
 import styled from "styled-components";
-import PageTransition from "@/Components.js/PageTransition";
 
 export default function MBSRPage() {
-    return(
-        <>
-         <Head>
-        <title>MBSR - SILKE MAY - KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE</title>
-        <meta name="description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
-        <meta name="keywords" content="MBSR, MBCT, Kunsttherapie, Bonn"/>
+  return (
+    <>
+      <Head>
+        <title>
+          MBSR - SILKE MAY - KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR
+          PSYCHOTHERAPIE
+        </title>
+        <meta
+          name="description"
+          content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin"
+        />
+        <meta name="keywords" content="MBSR, MBCT, Kunsttherapie, Bonn" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Silke May" />
-        <meta property="og:description" content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin" />
+        <meta
+          property="og:description"
+          content="Silke May - Kunsttherapeutin DGKT - Heilpraktikerin für Psychotherapie - bildende Künstlerin"
+        />
         <meta property="og:type" content="website" />
       </Head>
-      <PageTransition>
-    <PageContent content={mbsr} src={Mbsr} alt={"Steinkreis"}/>
-    <StyledDiv>
-    <StyledImage src={Logo} alt="MBSR Logo" width={500} height={500} />
-    </StyledDiv>
-    </PageTransition>
-</>
-    );
+
+      <PageContent content={mbsr} src={Mbsr} alt={"Steinkreis"} />
+      <StyledDiv>
+        <StyledImage src={Logo} alt="MBSR Logo" width={500} height={500} />
+      </StyledDiv>
+    </>
+  );
 }
 const StyledDiv = styled.div`
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledImage = styled(Image)`
-width: 400px;
-height: 250px;
-object-fit: contain;
+  width: 400px;
+  height: 250px;
+  object-fit: contain;
 `;
