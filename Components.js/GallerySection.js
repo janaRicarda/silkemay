@@ -15,14 +15,14 @@ export default function GallerySection({ paintings, title, id }) {
 
   useEffect(() => {
     if (show) {
-        document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
     } else {
-        document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     }
     return () => {
-        document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     };
-}, [show]);
+  }, [show]);
 
   function handleShow(index) {
     setShow(!show);
@@ -55,10 +55,15 @@ export default function GallerySection({ paintings, title, id }) {
 
   return (
     <StyledSection key={id}>
-      <StyledH2>{title}</StyledH2>  
-      <StyledArticle as={motion.article} variants={article} initial="hidden" animate="show">
+      <StyledH2>{title}</StyledH2>
+      <StyledArticle
+        as={motion.article}
+        variants={article}
+        initial="hidden"
+        animate="show">
         {paintings.map((painting, index) => (
-          <StyledButton as={motion.button}
+          <StyledButton
+            as={motion.button}
             key={painting.id}
             variants={button}
             onClick={() => handleShow(index)}>
@@ -130,8 +135,8 @@ const StyledButton = styled(motion.button)`
   width: inherit;
   height: inherit;
   &:hover {
-  transform: scale(1.05);
-  transition: 300ms ease-in-out;
+    transform: scale(1.05);
+    transition: 300ms ease-in-out;
   }
 `;
 

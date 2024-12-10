@@ -3,7 +3,6 @@ import Image from "next/image";
 import Prev from "../public/chevron-left.svg";
 import Next from "../public/chevron-right.svg";
 import { useEffect, useRef } from "react";
-import PageTransition from "./PageTransition";
 import Close from "../public/close-black.svg";
 
 export default function BigImage({
@@ -37,7 +36,6 @@ export default function BigImage({
 
   return (
     <StyledDialog ref={dialogRef}>
-        <PageTransition>
       <StyledSection>
         <StyledPrev
           tabIndex={0}
@@ -51,15 +49,17 @@ export default function BigImage({
         />
         <StyledArticle>
           <StyledImage src={src} alt={title} />
-            <StyledWrapper>
-              <StyledParagraph>{paintingToShow.title}</StyledParagraph>
-              <p>{paintingToShow.material}</p>
-              <p>{paintingToShow.size}</p>
-              <p>
-                Bild {index} von {length}
-              </p>
-            </StyledWrapper>
-            <StyledButton onClick={handleShow}><StyledClose/></StyledButton>
+          <StyledWrapper>
+            <StyledParagraph>{paintingToShow.title}</StyledParagraph>
+            <p>{paintingToShow.material}</p>
+            <p>{paintingToShow.size}</p>
+            <p>
+              Bild {index} von {length}
+            </p>
+          </StyledWrapper>
+          <StyledButton onClick={handleShow}>
+            <StyledClose />
+          </StyledButton>
         </StyledArticle>
         <StyledNext
           tabIndex={0}
@@ -72,7 +72,6 @@ export default function BigImage({
           onClick={() => handlePainting("next")}
         />
       </StyledSection>
-      </PageTransition>
     </StyledDialog>
   );
 }
@@ -101,12 +100,12 @@ const StyledSection = styled.section`
   justify-content: center;
   align-items: center;
   width: 100vw;
-    @media (max-height: 500px) and (max-width: 1000px) {
+  @media (max-height: 500px) and (max-width: 1000px) {
     width: 100%;
     height: 100%;
-    }
+  }
   @media (min-width: 800px) {
-  width: auto;
+    width: auto;
   }
 `;
 
@@ -119,21 +118,21 @@ const StyledArticle = styled.article`
   flex-direction: column;
   position: relative;
   @media (max-height: 500px) and (max-width: 1000px) {
-  flex-direction: row;
-  height: 90dvh;
-  width: auto;
-  gap: 0.5rem;
+    flex-direction: row;
+    height: 90dvh;
+    width: auto;
+    gap: 0.5rem;
   }
 `;
 
 const StyledImage = styled(Image)`
   width: 100%;
   height: auto;
-    @media (max-height: 500px) and (max-width: 1000px) {
+  @media (max-height: 500px) and (max-width: 1000px) {
     opject-fit: contain;
     height: 100%;
     width: auto;
-    }
+  }
 `;
 
 const StyledWrapper = styled.div`
@@ -143,10 +142,10 @@ const StyledWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   font-size: 0.8rem;
-    @media (max-height: 500px) and (max-width: 1000px) {
-  justify-content: flex-start;
-  width: 100%;
-  margin-top: 0;
+  @media (max-height: 500px) and (max-width: 1000px) {
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 0;
   }
 `;
 
@@ -167,11 +166,11 @@ const StyledButton = styled.button`
   //padding: 0.5rem;
   opacity: 0.5;
   &:hover {
-  //color: white;
-  //background: var(--dark-font);
-  opacity: 1;
-  transform: scale(1.2);
-  transition: all 300ms ease-in-out;
+    //color: white;
+    //background: var(--dark-font);
+    opacity: 1;
+    transform: scale(1.2);
+    transition: all 300ms ease-in-out;
   }
 `;
 
@@ -218,9 +217,10 @@ const StyledNext = styled(Next)`
 `;
 
 const StyledClose = styled(Close)`
-width: 1.5rem;
-height: 1.5rem;
-@media (min-width: 600px) {
-width: 2rem;
-height: 2rem;
-}`;
+  width: 1.5rem;
+  height: 1.5rem;
+  @media (min-width: 600px) {
+    width: 2rem;
+    height: 2rem;
+  }
+`;
