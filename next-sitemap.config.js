@@ -15,4 +15,4 @@ module.exports = {
             lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
         }
     }
-  };
+};
