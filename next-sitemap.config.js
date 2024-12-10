@@ -11,7 +11,7 @@ module.exports = {
         return {
             loc: path,
             changefreq: config.changefreq,
-            priotity: config.priority,
+            priotity: path === "/" ? 1.0 : 0.7,
             lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
         }
     }
