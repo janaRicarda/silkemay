@@ -13,7 +13,7 @@ export default function MobileLandingPage() {
             SILKE MAY
           </StyledLink>
           <StyledParagraph>
-            KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE /
+            KUNSTTHERAPEUTIN DGKT | HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE |
             BILDENDE KÜNSTLERIN
           </StyledParagraph>
         </StyledArticle>

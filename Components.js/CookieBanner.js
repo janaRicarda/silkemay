@@ -41,28 +41,37 @@ export default function CookieBanner({ handleCookieBanner }) {
 
 const StyledDiv = styled(motion.div)`
   position: fixed;
-  top: 80%;
+  bottom: 5%;
   right: 0;
-
+  width: 100vw;
   background-color: ${({ $lightBackground }) =>
-    $lightBackground ? "var(--light-background)" : "var(--background)"};
-
+    $lightBackground ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.2)"};
   z-index: 1;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
   align-items: center;
-
-  padding: 1rem;
+  padding: 2rem;
+  @media (min-width: 800px) {
+  width: ${({$lightBackground}) => ($lightBackground) ? "100vw" : "calc(100vw - 400px)"};
+  margin-left: ${({$lightBackground}) => ($lightBackground) ? "0" : "400px"};
+  }
+  @media (min-width: 1000px) {
+  width: ${({$lightBackground}) => ($lightBackground) ? "100vw" : "calc(100vw - 450px)"};
+  margin-left: ${({$lightBackground}) => ($lightBackground) ? "0" : "450px"};
+  }
+  @media (min-width: 1200px) {
+  width: ${({$lightBackground}) => ($lightBackground) ? "100vw" : "calc(100vw - 500px)"};
+  margin-left: ${({$lightBackground}) => ($lightBackground) ? "0" : "500px"};
+  }
 `;
 
 const StyledParagraph = styled.p`
   color: ${({ $darkFont }) =>
     $darkFont ? "var(--dark-font)" : "var(--light-font)"};
   font-size: 0.8rem;
-
+  text-align: center;
   @media (min-width: 600px) {
     font-size: 1.1rem;
   }
@@ -72,13 +81,16 @@ const StyledParagraph = styled.p`
 `;
 
 const StyledButton = styled.div`
+cursor: pointer;
   background-color: ${({ $coloredBackground }) =>
     $coloredBackground ? "var(--background)" : "var(--light-background)"};
   color: ${({ $coloredBackground }) =>
     $coloredBackground ? "var(--light-background)" : "var(--background)"};
-
   padding: 0.4rem;
   min-width: 70px;
-
   text-align: center;
+  &:hover {
+  transform: scale(1.05);
+  transition: 300ms ease-in-out;
+  }
 `;

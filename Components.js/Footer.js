@@ -13,10 +13,10 @@ export default function Footer({ brightFont }) {
       name: "datenschutz",
       href: "/datenschutz",
     },
-    {
+   /*  {
       name: "newsletter",
       href: "/newsletter",
-    },
+    }, */
   ];
 
   return (
