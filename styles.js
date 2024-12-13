@@ -37,7 +37,7 @@ export default createGlobalStyle`
  }
  @media (min-width: 1200px) {
  margin-left: 500px;
- fonst-size: 1.3rem;
+ font-size: 1.3rem;
  }
   }
 

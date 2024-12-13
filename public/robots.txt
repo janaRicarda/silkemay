@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://silkemay.vercel.app
+
+# Sitemaps
+Sitemap: https://silkemay.vercel.app/sitemap.xml

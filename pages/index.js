@@ -33,7 +33,7 @@ export default function Home() {
       ) : (
         <StyledContentSection>
           <StyledParagraph>
-            KUNSTTHERAPEUTIN DGKT / HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE /
+            KUNSTTHERAPEUTIN DGKT | HEILPRAKTIKERIN FÜR PSYCHOTHERAPIE |
             BILDENDE KÜNSTLERIN
           </StyledParagraph>
         </StyledContentSection>
